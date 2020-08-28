@@ -1,0 +1,1436 @@
+{
+  "Top": "surfDetector",
+  "RtlTop": "surfDetector",
+  "RtlPrefix": "",
+  "SourceLanguage": "cpp",
+  "ResetStyle": "control",
+  "GenerateBdFiles": "1",
+  "HostMachineBits": "64",
+  "Target": {
+    "Family": "zynq",
+    "Device": "xc7z020",
+    "Package": "clg400",
+    "Speed": "-2"
+  },
+  "HlsSolution": {
+    "DirectiveTcl": [
+      "set_directive_pipeline SURF::HessianDetector\/HessianDetector_octave -II 2",
+      "set_directive_stream top ",
+      "set_directive_unroll SURF::calcLayerDetAndTrace\/calcLayerDetAndTrace_initbufIndex ",
+      "set_directive_loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_layer -min 1 -max 3",
+      "set_directive_loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_r0 -min 1 -max 559",
+      "set_directive_loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_c0 -min 1 -max 858",
+      "set_directive_loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_c0 -min 1 -max 858",
+      "set_directive_pipeline SURF::calcHaarPattern ",
+      "set_directive_dataflow SURF::HessianDetector ",
+      "set_directive_array_partition SURF::calcLayerDetAndTrace ",
+      "set_directive_array_partition SURF::calcLayerDetAndTrace ",
+      "set_directive_array_partition SURF::calcLayerDetAndTrace ",
+      "set_directive_array_partition SURF::calcLayerDetAndTrace ",
+      "set_directive_array_partition SURF::calcLayerDetAndTrace ",
+      "set_directive_unroll SURF::calcLayerDetAndTrace\/calcLayerDetAndTrace_layer ",
+      "set_directive_pipeline SURF::calcHaarPattern_x_y ",
+      "set_directive_pipeline SURF::calcHaarPattern_xy ",
+      "set_directive_array_partition SURF::findCharacteristicPoint ",
+      "set_directive_array_partition SURF::findCharacteristicPoint ",
+      "set_directive_array_partition SURF::findCharacteristicPoint ",
+      "set_directive_array_partition SURF::findCharacteristicPoint ",
+      "set_directive_array_partition SURF::findCharacteristicPoint ",
+      "set_directive_pipeline SURF::findCharacteristicPoint\/findCharacteristicPoint_r0 "
+    ],
+    "DirectiveInfo": [
+      "pipeline SURF::HessianDetector\/HessianDetector_octave {{II 2}} {}",
+      "stream top {{variable positionBooleanTextRequiredsumBuf} {depth 48000} {dim 1}} {}",
+      "unroll SURF::calcLayerDetAndTrace\/calcLayerDetAndTrace_initbufIndex {} {}",
+      "loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_layer {{tripcount positionBooleanCmd} {min 1} {max 3}} {}",
+      "loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_r0 {{tripcount positionBooleanCmd} {min 1} {max 559}} {}",
+      "loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_c0 {{tripcount positionBooleanCmd} {min 1} {max 858}} {}",
+      "loop_tripcount SURF::findCharacteristicPoint\/findCharacteristicPoint_c0 {{tripcount positionBooleanCmd} {min 1} {max 858}} {}",
+      "pipeline SURF::calcHaarPattern {} {}",
+      "dataflow SURF::HessianDetector {} {}",
+      "array_partition SURF::calcLayerDetAndTrace {{partition positionBooleanCmd} {variable positionBooleanTextRequiredDx} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::calcLayerDetAndTrace {{partition positionBooleanCmd} {variable positionBooleanTextRequiredDx} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::calcLayerDetAndTrace {{partition positionBooleanCmd} {variable positionBooleanTextRequiredDy} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::calcLayerDetAndTrace {{partition positionBooleanCmd} {variable positionBooleanTextRequiredDxy} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::calcLayerDetAndTrace {{partition positionBooleanCmd} {variable positionBooleanTextRequiredsumBuf} {complete positionBoolean0type} {dim 1}} {}",
+      "unroll SURF::calcLayerDetAndTrace\/calcLayerDetAndTrace_layer {} {}",
+      "pipeline SURF::calcHaarPattern_x_y {} {}",
+      "pipeline SURF::calcHaarPattern_xy {} {}",
+      "array_partition SURF::findCharacteristicPoint {{partition positionBooleanCmd} {variable positionBooleanTextRequireddetRow} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::findCharacteristicPoint {{partition positionBooleanCmd} {variable positionBooleanTextRequireddetCol} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::findCharacteristicPoint {{partition positionBooleanCmd} {variable positionBooleanTextRequiredsizes} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::findCharacteristicPoint {{partition positionBooleanCmd} {variable positionBooleanTextRequiredsampleSteps} {complete positionBoolean0type} {dim 0}} {}",
+      "array_partition SURF::findCharacteristicPoint {{partition positionBooleanCmd} {variable positionBooleanTextRequiredbRow} {complete positionBoolean0type} {dim 0}} {}",
+      "pipeline SURF::findCharacteristicPoint\/findCharacteristicPoint_r0 {} {}"
+    ]
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "IsCombLogic": "0",
+    "II": "x",
+    "Latency": "1926811",
+    "Uncertainty": "1.25"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "surfDetector",
+    "Version": "1.0",
+    "DisplayName": "Surfdetector",
+    "Revision": "",
+    "Description": "An IP generated by Vivado HLS",
+    "Taxonomy": "\/VIVADO_HLS_IP",
+    "AutoFamilySupport": ""
+  },
+  "Files": {
+    "CSource": [
+      "..\/..\/top.cpp",
+      "..\/..\/mSURF.cpp"
+    ],
+    "Vhdl": [
+      "impl\/vhdl\/calcHaarPattern_x_y.vhd",
+      "impl\/vhdl\/calcHaarPattern_xy.vhd",
+      "impl\/vhdl\/calcLayerDetAndTrace.vhd",
+      "impl\/vhdl\/calcLayerDetAndTrfYi.vhd",
+      "impl\/vhdl\/fifo_w32_d2_A.vhd",
+      "impl\/vhdl\/fifo_w32_d2_A_x.vhd",
+      "impl\/vhdl\/findCharacteristicPo.vhd",
+      "impl\/vhdl\/findCharacteristiFfa.vhd",
+      "impl\/vhdl\/HessianDetector.vhd",
+      "impl\/vhdl\/integralImg.vhd",
+      "impl\/vhdl\/integralImg_buf_1.vhd",
+      "impl\/vhdl\/p_hls_fptosi_float_i.vhd",
+      "impl\/vhdl\/start_for_findChaIfE.vhd",
+      "impl\/vhdl\/start_for_HessianJfO.vhd",
+      "impl\/vhdl\/surfDetector_dmulEe0.vhd",
+      "impl\/vhdl\/surfDetector_dsubDeQ.vhd",
+      "impl\/vhdl\/surfDetector_faddbkb.vhd",
+      "impl\/vhdl\/surfDetector_fcmpGfk.vhd",
+      "impl\/vhdl\/surfDetector_fmulcud.vhd",
+      "impl\/vhdl\/surfDetector_fpexCeG.vhd",
+      "impl\/vhdl\/surfDetector_fptrBew.vhd",
+      "impl\/vhdl\/surfDetector_keyPoints_V_m_axi.vhd",
+      "impl\/vhdl\/surfDetector_kpn_m_axi.vhd",
+      "impl\/vhdl\/surfDetector_mul_Hfu.vhd",
+      "impl\/vhdl\/surfDetector_mux_eOg.vhd",
+      "impl\/vhdl\/surfDetector_sitodEe.vhd",
+      "impl\/vhdl\/surfDetector.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/calcHaarPattern_x_y.v",
+      "impl\/verilog\/calcHaarPattern_xy.v",
+      "impl\/verilog\/calcLayerDetAndTrace.v",
+      "impl\/verilog\/calcLayerDetAndTrfYi.v",
+      "impl\/verilog\/calcLayerDetAndTrfYi_ram.dat",
+      "impl\/verilog\/fifo_w32_d2_A.v",
+      "impl\/verilog\/fifo_w32_d2_A_x.v",
+      "impl\/verilog\/findCharacteristicPo.v",
+      "impl\/verilog\/findCharacteristiFfa.v",
+      "impl\/verilog\/findCharacteristiFfa_ram.dat",
+      "impl\/verilog\/HessianDetector.v",
+      "impl\/verilog\/integralImg.v",
+      "impl\/verilog\/integralImg_buf_1.v",
+      "impl\/verilog\/integralImg_buf_1_ram.dat",
+      "impl\/verilog\/p_hls_fptosi_float_i.v",
+      "impl\/verilog\/start_for_findChaIfE.v",
+      "impl\/verilog\/start_for_HessianJfO.v",
+      "impl\/verilog\/surfDetector_dmulEe0.v",
+      "impl\/verilog\/surfDetector_dsubDeQ.v",
+      "impl\/verilog\/surfDetector_faddbkb.v",
+      "impl\/verilog\/surfDetector_fcmpGfk.v",
+      "impl\/verilog\/surfDetector_fmulcud.v",
+      "impl\/verilog\/surfDetector_fpexCeG.v",
+      "impl\/verilog\/surfDetector_fptrBew.v",
+      "impl\/verilog\/surfDetector_keyPoints_V_m_axi.v",
+      "impl\/verilog\/surfDetector_kpn_m_axi.v",
+      "impl\/verilog\/surfDetector_mul_Hfu.v",
+      "impl\/verilog\/surfDetector_mux_eOg.v",
+      "impl\/verilog\/surfDetector_sitodEe.v",
+      "impl\/verilog\/surfDetector.v"
+    ],
+    "Misc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/surfDetector_ap_dmul_3_max_dsp_64_ip.tcl",
+      "impl\/misc\/surfDetector_ap_dsub_3_full_dsp_64_ip.tcl",
+      "impl\/misc\/surfDetector_ap_fadd_2_full_dsp_32_ip.tcl",
+      "impl\/misc\/surfDetector_ap_fcmp_0_no_dsp_32_ip.tcl",
+      "impl\/misc\/surfDetector_ap_fmul_1_max_dsp_32_ip.tcl",
+      "impl\/misc\/surfDetector_ap_fpext_0_no_dsp_32_ip.tcl",
+      "impl\/misc\/surfDetector_ap_fptrunc_0_no_dsp_64_ip.tcl",
+      "impl\/misc\/surfDetector_ap_sitofp_2_no_dsp_32_ip.tcl"
+    ],
+    "DesignXml": "C:\/Users\/GUDONG\/Desktop\/HLS_SURF_Simplified\/HLS_SURF_Simplified\/solution3\/.autopilot\/db\/surfDetector.design.xml"
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "IP": [
+      {
+        "name": "surfDetector_ap_dmul_3_max_dsp_64",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name surfDetector_ap_dmul_3_max_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_dsub_3_full_dsp_64",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Subtract CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name surfDetector_ap_dsub_3_full_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_fadd_2_full_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name surfDetector_ap_fadd_2_full_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_fcmp_0_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 1 CONFIG.c_result_fraction_width 0 CONFIG.component_name surfDetector_ap_fcmp_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Compare CONFIG.result_precision_type Custom CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_fmul_1_max_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 1 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name surfDetector_ap_fmul_1_max_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_fpext_0_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 11 CONFIG.c_result_fraction_width 53 CONFIG.component_name surfDetector_ap_fpext_0_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Float_to_Float CONFIG.result_precision_type Double CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_fptrunc_0_no_dsp_64",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Double CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 11 CONFIG.c_a_fraction_width 53 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 0 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name surfDetector_ap_fptrunc_0_no_dsp_64 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken false CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Float_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "name": "surfDetector_ap_sitofp_2_no_dsp_32",
+        "vlnv": "xilinx.com:ip:floating_point:7.1",
+        "params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name surfDetector_ap_sitofp_2_no_dsp_32 CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "ctype": {"CLK": {"Type": "bool"}},
+      "buses": "m_axi_keyPoints_V m_axi_kpn video_in",
+      "reset": "ap_rst_n"
+    },
+    "ap_rst_n": {
+      "type": "reset",
+      "polarity": "ACTIVE_LOW",
+      "ctype": {"RST": {"Type": "bool"}}
+    },
+    "m_axi_keyPoints_V": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_keyPoints_V",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_KEYPOINTS_V",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    },
+    "m_axi_kpn": {
+      "type": "native_axim",
+      "is_adaptor": "true",
+      "mode": "master",
+      "port_prefix": "m_axi_kpn",
+      "data_width": "32",
+      "param_prefix": "C_M_AXI_KPN",
+      "ctype": {
+        "AWLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "AWSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "AWQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "AWVALID": {"Type": "bool"},
+        "AWREADY": {"Type": "bool"},
+        "WLAST": {"Type": "bool"},
+        "WVALID": {"Type": "bool"},
+        "WREADY": {"Type": "bool"},
+        "BVALID": {"Type": "bool"},
+        "BREADY": {"Type": "bool"},
+        "BRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLEN": {
+          "Type": "integer unsigned",
+          "Width": "8"
+        },
+        "ARSIZE": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARBURST": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARLOCK": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "ARREGION": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARCACHE": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARPROT": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "ARQOS": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "ARVALID": {"Type": "bool"},
+        "ARREADY": {"Type": "bool"},
+        "RLAST": {"Type": "bool"},
+        "RVALID": {"Type": "bool"},
+        "RREADY": {"Type": "bool"},
+        "RRESP": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        },
+        "AWADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "AWID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "AWUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WDATA": {
+          "Type": "integer signed",
+          "Width": "32"
+        },
+        "WSTRB": {
+          "Type": "integer unsigned",
+          "Width": "4"
+        },
+        "WID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "WUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARADDR": {
+          "Type": "integer unsigned",
+          "Width": "32"
+        },
+        "ARID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "ARUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RDATA": {
+          "Type": "integer signed",
+          "Width": "32"
+        },
+        "RID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "RUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "BUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        }
+      },
+      "HasOffset": "0",
+      "preferred_usage_value": "MEMORY",
+      "has_dependant_on": "0",
+      "offset_slave_name": "",
+      "NUM_READ_OUTSTANDING": "16",
+      "NUM_WRITE_OUTSTANDING": "16",
+      "MAX_READ_BURST_LENGTH": "16",
+      "MAX_WRITE_BURST_LENGTH": "16",
+      "port_width": {
+        "ARADDR": "32",
+        "ARID": "1",
+        "ARUSER": "1",
+        "AWADDR": "32",
+        "AWID": "1",
+        "AWUSER": "1",
+        "BID": "1",
+        "BUSER": "1",
+        "RDATA": "32",
+        "RID": "1",
+        "RUSER": "1",
+        "WDATA": "32",
+        "WID": "1",
+        "WSTRB": "4",
+        "WUSER": "1"
+      }
+    },
+    "video_in": {
+      "type": "axi4stream",
+      "mode": "slave",
+      "port_prefix": "video_in",
+      "has_tready": "1",
+      "ctype": {
+        "TDATA": {
+          "Type": "integer unsigned",
+          "Width": "24"
+        },
+        "TKEEP": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "TSTRB": {
+          "Type": "integer unsigned",
+          "Width": "3"
+        },
+        "TUSER": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "TLAST": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "TID": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "TDEST": {
+          "Type": "integer unsigned",
+          "Width": "1"
+        },
+        "TVALID": {"Type": "bool"},
+        "TREADY": {"Type": "bool"}
+      },
+      "port_width": {
+        "TDATA": "24",
+        "TDEST": "1",
+        "TID": "1",
+        "TKEEP": "3",
+        "TLAST": "1",
+        "TSTRB": "3",
+        "TUSER": "1"
+      }
+    }
+  },
+  "RtlPorts": {
+    "m_axi_keyPoints_V_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_keyPoints_V_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_keyPoints_V_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_keyPoints_V_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_keyPoints_V_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_keyPoints_V_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_keyPoints_V_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_keyPoints_V_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_keyPoints_V_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_keyPoints_V_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_keyPoints_V_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_keyPoints_V_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_keyPoints_V_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_keyPoints_V_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_keyPoints_V_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_AWVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_AWREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_AWADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_kpn_AWID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_AWLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_kpn_AWSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_kpn_AWBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_kpn_AWLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_kpn_AWCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_AWPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_kpn_AWQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_AWREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_AWUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_WVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_WREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_WDATA": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_kpn_WSTRB": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_WLAST": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_WID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_WUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_ARVALID": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_ARREADY": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_ARADDR": {
+      "dir": "out",
+      "width": "32"
+    },
+    "m_axi_kpn_ARID": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_ARLEN": {
+      "dir": "out",
+      "width": "8"
+    },
+    "m_axi_kpn_ARSIZE": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_kpn_ARBURST": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_kpn_ARLOCK": {
+      "dir": "out",
+      "width": "2"
+    },
+    "m_axi_kpn_ARCACHE": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_ARPROT": {
+      "dir": "out",
+      "width": "3"
+    },
+    "m_axi_kpn_ARQOS": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_ARREGION": {
+      "dir": "out",
+      "width": "4"
+    },
+    "m_axi_kpn_ARUSER": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_RVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_RREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_RDATA": {
+      "dir": "in",
+      "width": "32"
+    },
+    "m_axi_kpn_RLAST": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_RID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_RUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_RRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_kpn_BVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "m_axi_kpn_BREADY": {
+      "dir": "out",
+      "width": "1"
+    },
+    "m_axi_kpn_BRESP": {
+      "dir": "in",
+      "width": "2"
+    },
+    "m_axi_kpn_BID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "m_axi_kpn_BUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "video_in_TDATA": {
+      "dir": "in",
+      "width": "24"
+    },
+    "video_in_TKEEP": {
+      "dir": "in",
+      "width": "3"
+    },
+    "video_in_TSTRB": {
+      "dir": "in",
+      "width": "3"
+    },
+    "video_in_TUSER": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "video_in_TLAST": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "video_in_TID": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "video_in_TDEST": {
+      "dir": "in",
+      "width": "1",
+      "isVector": "true"
+    },
+    "video_in_TVALID": {
+      "dir": "in",
+      "width": "1"
+    },
+    "video_in_TREADY": {
+      "dir": "out",
+      "width": "1"
+    }
+  },
+  "CPorts": {
+    "keyPoints_V": {
+      "interfaceRef": "m_axi_keyPoints_V",
+      "dir": "inout"
+    },
+    "kpn": {
+      "interfaceRef": "m_axi_kpn",
+      "dir": "inout"
+    },
+    "video_in_V_data_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_keep_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_strb_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_user_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_last_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_id_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    },
+    "video_in_V_dest_V": {
+      "interfaceRef": "video_in",
+      "dir": "in"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "surfDetector",
+      "Instances": [
+        {
+          "ModuleName": "HessianDetector",
+          "InstanceName": "HessianDetector_U0",
+          "Instances": [
+            {
+              "ModuleName": "calcLayerDetAndTrace",
+              "InstanceName": "calcLayerDetAndTrace_U0",
+              "Instances": [
+                {
+                  "ModuleName": "calcHaarPattern_xy",
+                  "InstanceName": "grp_calcHaarPattern_xy_fu_678",
+                  "Instances": [
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1876"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1882"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1888"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1894"
+                    }
+                  ]
+                },
+                {
+                  "ModuleName": "calcHaarPattern_x_y",
+                  "InstanceName": "grp_calcHaarPattern_x_y_fu_805",
+                  "Instances": [
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1484"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1490"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1496"
+                    },
+                    {
+                      "ModuleName": "p_hls_fptosi_float_i",
+                      "InstanceName": "grp_p_hls_fptosi_float_i_fu_1502"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "ModuleName": "findCharacteristicPo",
+              "InstanceName": "findCharacteristicPo_U0"
+            }
+          ]
+        },
+        {
+          "ModuleName": "integralImg",
+          "InstanceName": "integralImg_U0"
+        }
+      ]
+    },
+    "Metrics": {
+      "integralImg": {
+        "Latency": {
+          "LatencyBest": "964005",
+          "LatencyAvg": "2408208",
+          "LatencyWorst": "3371010",
+          "PipelineIIMin": "964005",
+          "PipelineIIMax": "3371010",
+          "PipelineII": "964005 ~ 3371010",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.253"
+        },
+        "Loops": [{
+            "Name": "integralImg_row",
+            "TripCount": "601",
+            "LatencyMin": "964004",
+            "LatencyMax": "3371009",
+            "Latency": "964004 ~ 3371009",
+            "PipelineII": "",
+            "PipelineDepthMin": "1604",
+            "PipelineDepthMax": "5609",
+            "PipelineDepth": "1604 ~ 5609",
+            "Loops": [{
+                "Name": "integralImg_col",
+                "TripCount": "801",
+                "LatencyMin": "1602",
+                "LatencyMax": "5607",
+                "Latency": "1602 ~ 5607",
+                "PipelineII": "",
+                "PipelineDepthMin": "2",
+                "PipelineDepthMax": "7",
+                "PipelineDepth": "2 ~ 7",
+                "Loops": [{
+                    "Name": "integralImg_channel",
+                    "TripCount": "3",
+                    "Latency": "3",
+                    "PipelineII": "",
+                    "PipelineDepth": "1"
+                  }]
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "4",
+          "DSP48E": "1",
+          "FF": "226",
+          "LUT": "429"
+        }
+      },
+      "p_hls_fptosi_float_i": {
+        "Latency": {
+          "LatencyBest": "0",
+          "LatencyAvg": "0",
+          "LatencyWorst": "0",
+          "PipelineII": "1",
+          "PipelineDepth": "1",
+          "PipelineType": "function"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.596"
+        },
+        "Area": {
+          "FF": "0",
+          "LUT": "431",
+          "BRAM_18K": "0",
+          "DSP48E": "0"
+        }
+      },
+      "calcHaarPattern_x_y": {
+        "Latency": {
+          "LatencyBest": "22",
+          "LatencyAvg": "22",
+          "LatencyWorst": "22",
+          "PipelineII": "3",
+          "PipelineDepth": "23",
+          "PipelineType": "function"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.644"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "5",
+          "FF": "2772",
+          "LUT": "15575"
+        }
+      },
+      "calcHaarPattern_xy": {
+        "Latency": {
+          "LatencyBest": "29",
+          "LatencyAvg": "29",
+          "LatencyWorst": "29",
+          "PipelineII": "4",
+          "PipelineDepth": "30",
+          "PipelineType": "function"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.644"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "5",
+          "FF": "3343",
+          "LUT": "19657"
+        }
+      },
+      "calcLayerDetAndTrace": {
+        "Latency": {
+          "LatencyBest": "1926807",
+          "LatencyAvg": "72211353",
+          "LatencyWorst": "141533097",
+          "PipelineIIMin": "1926807",
+          "PipelineIIMax": "141533097",
+          "PipelineII": "1926807 ~ 141533097",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.326"
+        },
+        "Loops": [{
+            "Name": "calcLayerDetAndTrace_row",
+            "TripCount": "601",
+            "LatencyMin": "1926806",
+            "LatencyMax": "141533096",
+            "Latency": "1926806 ~ 141533096",
+            "PipelineII": "",
+            "PipelineDepthMin": "3206",
+            "PipelineDepthMax": "235496",
+            "PipelineDepth": "3206 ~ 235496",
+            "Loops": [{
+                "Name": "calcLayerDetAndTrace_col",
+                "TripCount": "801",
+                "LatencyMin": "3204",
+                "LatencyMax": "235494",
+                "Latency": "3204 ~ 235494",
+                "PipelineII": "",
+                "PipelineDepthMin": "4",
+                "PipelineDepthMax": "294",
+                "PipelineDepth": "4 ~ 294"
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "44",
+          "DSP48E": "27",
+          "FF": "8628",
+          "LUT": "41518"
+        }
+      },
+      "findCharacteristicPo": {
+        "Latency": {
+          "LatencyBest": "1404223",
+          "LatencyAvg": "4209109",
+          "LatencyWorst": "30855526",
+          "PipelineIIMin": "1404223",
+          "PipelineIIMax": "30855526",
+          "PipelineII": "1404223 ~ 30855526",
+          "PipelineDepth": "",
+          "PipelineType": "none"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.750"
+        },
+        "Loops": [{
+            "Name": "findCharacteristicPoint_r0",
+            "TripCount": "591",
+            "LatencyMin": "1404216",
+            "LatencyMax": "30855519",
+            "Latency": "1404216 ~ 30855519",
+            "PipelineII": "",
+            "PipelineDepthMin": "2376",
+            "PipelineDepthMax": "52209",
+            "PipelineDepth": "2376 ~ 52209",
+            "Loops": [{
+                "Name": "findCharacteristicPoint_c0",
+                "TripCount": "791",
+                "LatencyMin": "2373",
+                "LatencyMax": "52206",
+                "Latency": "2373 ~ 52206",
+                "PipelineII": "",
+                "PipelineDepthMin": "3",
+                "PipelineDepthMax": "66",
+                "PipelineDepth": "3 ~ 66"
+              }]
+          }],
+        "Area": {
+          "BRAM_18K": "16",
+          "DSP48E": "1",
+          "FF": "999",
+          "LUT": "1776"
+        }
+      },
+      "HessianDetector": {
+        "Latency": {
+          "LatencyBest": "1926807",
+          "LatencyAvg": "72211353",
+          "LatencyWorst": "141533097",
+          "PipelineIIMin": "1926808",
+          "PipelineIIMax": "141533098",
+          "PipelineII": "1926808 ~ 141533098",
+          "PipelineDepth": "",
+          "PipelineType": "dataflow"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.326"
+        },
+        "Area": {
+          "BRAM_18K": "60",
+          "DSP48E": "28",
+          "FF": "9642",
+          "LUT": "43427"
+        }
+      },
+      "surfDetector": {
+        "Latency": {
+          "LatencyBest": "1926811",
+          "LatencyAvg": "72211357",
+          "LatencyWorst": "141533101",
+          "PipelineIIMin": "1926808",
+          "PipelineIIMax": "141533098",
+          "PipelineII": "1926808 ~ 141533098",
+          "PipelineDepth": "",
+          "PipelineType": "dataflow"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "9.326"
+        },
+        "Area": {
+          "BRAM_18K": "68",
+          "DSP48E": "29",
+          "FF": "10897",
+          "LUT": "45060"
+        }
+      }
+    }
+  },
+  "Sdx": {
+    "Target": "none",
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "XO": "",
+    "KernelName": "surfDetector",
+    "EnableXoSwEmu": "1"
+  },
+  "GenData": {
+    "DataVersion": "0.1",
+    "Time": "2020-08-18 15:45:27 +0800",
+    "ToolName": "vivado_hls",
+    "ToolVersion": "2018.3"
+  }
+}

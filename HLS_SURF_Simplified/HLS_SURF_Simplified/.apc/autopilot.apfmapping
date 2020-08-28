@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mSURF.cpp" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\mSURF.cpp"/>
+    <originFiles name="mSURF.h" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\mSURF.h"/>
+    <originFiles name="mType.h" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\mType.h"/>
+    <originFiles name="top.cpp" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\top.cpp"/>
+    <originFiles name="top.h" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\top.h"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="C:\Users\GUDONG\Desktop\HLS_SURF_Simplified\test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

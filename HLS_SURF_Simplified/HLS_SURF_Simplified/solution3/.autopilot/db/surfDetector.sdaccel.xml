@@ -1,0 +1,214 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'surfDetector'" level="0">
+<item name = "Date">Tue Aug 18 15:45:14 2020
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">HLS_SURF_Simplified</item>
+<item name = "Solution">solution3</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">9.326</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1926811, 141533101, 1926808, 141533098, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="HessianDetector_U0">HessianDetector, 1926807, 141533097, 1926808, 141533098, dataflow</column>
+<column name="integralImg_U0">integralImg, 964005, 3371010, 964005, 3371010, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, -, -</column>
+<column name="FIFO">0, -, 5, 44</column>
+<column name="Instance">68, 29, 10892, 45016</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, -</column>
+<column name="Register">-, -, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">24, 13, 10, 84</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="HessianDetector_U0">HessianDetector, 60, 28, 9642, 43427</column>
+<column name="integralImg_U0">integralImg, 4, 1, 226, 429</column>
+<column name="surfDetector_keyPoints_V_m_axi_U">surfDetector_keyPoints_V_m_axi, 2, 0, 512, 580</column>
+<column name="surfDetector_kpn_m_axi_U">surfDetector_kpn_m_axi, 2, 0, 512, 580</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="sum_V_U">0, 5, 44, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="m_axi_keyPoints_V_AWVALID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWREADY">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWADDR">out, 32, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWLEN">out, 8, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWSIZE">out, 3, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWBURST">out, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWLOCK">out, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWCACHE">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWPROT">out, 3, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWQOS">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWREGION">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_AWUSER">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WVALID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WREADY">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WDATA">out, 32, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WSTRB">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WLAST">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_WUSER">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARVALID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARREADY">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARADDR">out, 32, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARID">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARLEN">out, 8, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARSIZE">out, 3, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARBURST">out, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARLOCK">out, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARCACHE">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARPROT">out, 3, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARQOS">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARREGION">out, 4, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_ARUSER">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RVALID">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RREADY">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RDATA">in, 32, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RLAST">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RID">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RUSER">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_RRESP">in, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_BVALID">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_BREADY">out, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_BRESP">in, 2, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_BID">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="m_axi_keyPoints_V_BUSER">in, 1, m_axi, keyPoints_V, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, surfDetector, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, surfDetector, return value</column>
+<column name="m_axi_kpn_AWVALID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWREADY">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWADDR">out, 32, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWLEN">out, 8, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWSIZE">out, 3, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWBURST">out, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWLOCK">out, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWCACHE">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWPROT">out, 3, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWQOS">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWREGION">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_AWUSER">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WVALID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WREADY">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WDATA">out, 32, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WSTRB">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WLAST">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_WUSER">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARVALID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARREADY">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARADDR">out, 32, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARID">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARLEN">out, 8, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARSIZE">out, 3, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARBURST">out, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARLOCK">out, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARCACHE">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARPROT">out, 3, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARQOS">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARREGION">out, 4, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_ARUSER">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RVALID">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RREADY">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RDATA">in, 32, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RLAST">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RID">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RUSER">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_RRESP">in, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_BVALID">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_BREADY">out, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_BRESP">in, 2, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_BID">in, 1, m_axi, kpn, pointer</column>
+<column name="m_axi_kpn_BUSER">in, 1, m_axi, kpn, pointer</column>
+<column name="video_in_TDATA">in, 24, axis, video_in_V_data_V, pointer</column>
+<column name="video_in_TKEEP">in, 3, axis, video_in_V_keep_V, pointer</column>
+<column name="video_in_TSTRB">in, 3, axis, video_in_V_strb_V, pointer</column>
+<column name="video_in_TUSER">in, 1, axis, video_in_V_user_V, pointer</column>
+<column name="video_in_TLAST">in, 1, axis, video_in_V_last_V, pointer</column>
+<column name="video_in_TID">in, 1, axis, video_in_V_id_V, pointer</column>
+<column name="video_in_TDEST">in, 1, axis, video_in_V_dest_V, pointer</column>
+<column name="video_in_TVALID">in, 1, axis, video_in_V_dest_V, pointer</column>
+<column name="video_in_TREADY">out, 1, axis, video_in_V_dest_V, pointer</column>
+</table>
+</item>
+</section>
+
+<section name = "Critical Path" level="0">
+<item name = "Max Delay">0.00</item>
+<item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
+<keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
+</table>
+</item>
+</section>
+</profile>

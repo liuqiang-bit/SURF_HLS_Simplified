@@ -1,0 +1,7 @@
+Running: xsim.dir/surf_Simplified/xsimk.exe -simmode gui -wdb surf_Simplified.wdb -simrunnum 0 -socket 56992
+Design successfully loaded
+Design Loading Memory Usage: 10256 KB (Peak: 10256 KB)
+Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 261068 KB (Peak: 261068 KB)
+Simulation CPU Usage: 25296 ms

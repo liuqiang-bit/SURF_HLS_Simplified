@@ -1,0 +1,307 @@
+
+
+================================================================
+== Vivado HLS Report for 'surf_Simplified'
+================================================================
+* Date:           Thu Aug 27 17:06:12 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        HLS_SURF_Simplified
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+-----------+---------+-----------+----------+
+    |       Latency       |       Interval      | Pipeline |
+    |   min   |    max    |   min   |    max    |   Type   |
+    +---------+-----------+---------+-----------+----------+
+    |  5296622|  145384313|  5296615|  145384306| dataflow |
+    +---------+-----------+---------+-----------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+---------+-----------+---------+-----------+----------+
+        |                         |                      |       Latency       |       Interval      | Pipeline |
+        |         Instance        |        Module        |   min   |    max    |   min   |    max    |   Type   |
+        +-------------------------+----------------------+---------+-----------+---------+-----------+----------+
+        |HessianDetector_U0       |HessianDetector       |  5296614|  145384305|  5296615|  145384306| dataflow |
+        |integralImg_U0           |integralImg           |   964005|    3371010|   964005|    3371010|   none   |
+        |AXIvideo2Mat_U0          |AXIvideo2Mat          |   483003|     483003|   483003|     483003|   none   |
+        |surf_Simplified_entr_U0  |surf_Simplified_entr  |        0|          0|        0|          0|   none   |
+        |Block_codeRepl47_pro_U0  |Block_codeRepl47_pro  |        0|          0|        0|          0|   none   |
+        +-------------------------+----------------------+---------+-----------+---------+-----------+----------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     17|
+|FIFO             |        0|      -|      35|    236|
+|Instance         |       88|     12|    4899|  14894|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     18|
+|Register         |        -|      -|       9|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       88|     12|    4943|  15165|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       31|      5|       4|     28|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------+-----------------------------------+---------+-------+------+-------+
+    |               Instance              |               Module              | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------------------+-----------------------------------+---------+-------+------+-------+
+    |AXIvideo2Mat_U0                      |AXIvideo2Mat                       |        0|      0|   261|    147|
+    |Block_codeRepl47_pro_U0              |Block_codeRepl47_pro               |        0|      0|     2|      7|
+    |HessianDetector_U0                   |HessianDetector                    |       80|     11|  3258|  12921|
+    |integralImg_U0                       |integralImg                        |        4|      1|   171|    374|
+    |surf_Simplified_AXILiteS_s_axi_U     |surf_Simplified_AXILiteS_s_axi     |        0|      0|   112|    168|
+    |surf_Simplified_entr_U0              |surf_Simplified_entr               |        0|      0|     3|     13|
+    |surf_Simplified_keyPoints_m_axi_U    |surf_Simplified_keyPoints_m_axi    |        2|      0|   512|    580|
+    |surf_Simplified_pointNumber_m_axi_U  |surf_Simplified_pointNumber_m_axi  |        2|      0|   512|    580|
+    |surf_Simplified_threshold_s_axi_U    |surf_Simplified_threshold_s_axi    |        0|      0|    68|    104|
+    +-------------------------------------+-----------------------------------+---------+-------+------+-------+
+    |Total                                |                                   |       88|     12|  4899|  14894|
+    +-------------------------------------+-----------------------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-----------------------+---------+---+----+------+-----+---------+
+    |          Name         | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +-----------------------+---------+---+----+------+-----+---------+
+    |img_data_stream_0_V_U  |        0|  5|  20|     2|    8|       16|
+    |img_data_stream_1_V_U  |        0|  5|  20|     2|    8|       16|
+    |img_data_stream_2_V_U  |        0|  5|  20|     2|    8|       16|
+    |keyPoints_V_c_U        |        0|  5|  44|     3|   32|       96|
+    |kpn_c_U                |        0|  5|  44|     3|   32|       96|
+    |sum_V_U                |        0|  5|  44|     2|   32|       64|
+    |this_assign_1_loc_c_U  |        0|  5|  44|     3|   32|       96|
+    +-----------------------+---------+---+----+------+-----+---------+
+    |Total                  |        0| 35| 236|    17|  152|      400|
+    +-----------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +------------------------------------------+----------+-------+---+----+------------+------------+
+    |               Variable Name              | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------------+----------+-------+---+----+------------+------------+
+    |AXIvideo2Mat_U0_ap_ready_count            |     +    |      0|  0|   3|           2|           1|
+    |Block_codeRepl47_pro_U0_ap_ready_count    |     +    |      0|  0|   3|           2|           1|
+    |surf_Simplified_entr_U0_ap_ready_count    |     +    |      0|  0|   3|           2|           1|
+    |AXIvideo2Mat_U0_ap_start                  |    and   |      0|  0|   1|           1|           1|
+    |Block_codeRepl47_pro_U0_ap_start          |    and   |      0|  0|   1|           1|           1|
+    |ap_idle                                   |    and   |      0|  0|   1|           1|           1|
+    |ap_sync_ready                             |    and   |      0|  0|   1|           1|           1|
+    |surf_Simplified_entr_U0_ap_start          |    and   |      0|  0|   1|           1|           1|
+    |ap_sync_AXIvideo2Mat_U0_ap_ready          |    or    |      0|  0|   1|           1|           1|
+    |ap_sync_Block_codeRepl47_pro_U0_ap_ready  |    or    |      0|  0|   1|           1|           1|
+    |ap_sync_surf_Simplified_entr_U0_ap_ready  |    or    |      0|  0|   1|           1|           1|
+    +------------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                     |          |      0|  0|  17|          14|          11|
+    +------------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |                     Name                     | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |AXIvideo2Mat_U0_ap_ready_count                |   3|          2|    2|          4|
+    |Block_codeRepl47_pro_U0_ap_ready_count        |   3|          2|    2|          4|
+    |ap_sync_reg_AXIvideo2Mat_U0_ap_ready          |   3|          2|    1|          2|
+    |ap_sync_reg_Block_codeRepl47_pro_U0_ap_ready  |   3|          2|    1|          2|
+    |ap_sync_reg_surf_Simplified_entr_U0_ap_ready  |   3|          2|    1|          2|
+    |surf_Simplified_entr_U0_ap_ready_count        |   3|          2|    2|          4|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |Total                                         |  18|         12|    9|         18|
+    +----------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------+---+----+-----+-----------+
+    |                     Name                     | FF| LUT| Bits| Const Bits|
+    +----------------------------------------------+---+----+-----+-----------+
+    |AXIvideo2Mat_U0_ap_ready_count                |  2|   0|    2|          0|
+    |Block_codeRepl47_pro_U0_ap_ready_count        |  2|   0|    2|          0|
+    |ap_sync_reg_AXIvideo2Mat_U0_ap_ready          |  1|   0|    1|          0|
+    |ap_sync_reg_Block_codeRepl47_pro_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_surf_Simplified_entr_U0_ap_ready  |  1|   0|    1|          0|
+    |surf_Simplified_entr_U0_ap_ready_count        |  2|   0|    2|          0|
+    +----------------------------------------------+---+----+-----+-----------+
+    |Total                                         |  9|   0|    9|          0|
+    +----------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++----------------------------+-----+-----+------------+-------------------+--------------+
+|s_axi_AXILiteS_AWVALID      |  in |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_AWREADY      | out |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_AWADDR       |  in |    5|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_WVALID       |  in |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_WREADY       | out |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_WDATA        |  in |   32|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_WSTRB        |  in |    4|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_ARVALID      |  in |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_ARREADY      | out |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_ARADDR       |  in |    5|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_RVALID       | out |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_RREADY       |  in |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_RDATA        | out |   32|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_RRESP        | out |    2|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_BVALID       | out |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_BREADY       |  in |    1|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_AXILiteS_BRESP        | out |    2|    s_axi   |      AXILiteS     |    scalar    |
+|s_axi_threshold_AWVALID     |  in |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_AWREADY     | out |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_AWADDR      |  in |    5|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_WVALID      |  in |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_WREADY      | out |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_WDATA       |  in |   32|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_WSTRB       |  in |    4|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_ARVALID     |  in |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_ARREADY     | out |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_ARADDR      |  in |    5|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_RVALID      | out |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_RREADY      |  in |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_RDATA       | out |   32|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_RRESP       | out |    2|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_BVALID      | out |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_BREADY      |  in |    1|    s_axi   |     threshold     |    scalar    |
+|s_axi_threshold_BRESP       | out |    2|    s_axi   |     threshold     |    scalar    |
+|ap_clk                      |  in |    1| ap_ctrl_hs |  surf_Simplified  | return value |
+|ap_rst_n                    |  in |    1| ap_ctrl_hs |  surf_Simplified  | return value |
+|interrupt                   | out |    1| ap_ctrl_hs |  surf_Simplified  | return value |
+|m_axi_keyPoints_AWVALID     | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWREADY     |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWADDR      | out |   32|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWID        | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWLEN       | out |    8|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWSIZE      | out |    3|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWBURST     | out |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWLOCK      | out |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWCACHE     | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWPROT      | out |    3|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWQOS       | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWREGION    | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_AWUSER      | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WVALID      | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WREADY      |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WDATA       | out |   32|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WSTRB       | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WLAST       | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WID         | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_WUSER       | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARVALID     | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARREADY     |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARADDR      | out |   32|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARID        | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARLEN       | out |    8|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARSIZE      | out |    3|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARBURST     | out |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARLOCK      | out |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARCACHE     | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARPROT      | out |    3|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARQOS       | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARREGION    | out |    4|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_ARUSER      | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RVALID      |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RREADY      | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RDATA       |  in |   32|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RLAST       |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RID         |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RUSER       |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_RRESP       |  in |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_BVALID      |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_BREADY      | out |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_BRESP       |  in |    2|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_BID         |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_keyPoints_BUSER       |  in |    1|    m_axi   |     keyPoints     |    pointer   |
+|m_axi_pointNumber_AWVALID   | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWREADY   |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWADDR    | out |   32|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWID      | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWLEN     | out |    8|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWSIZE    | out |    3|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWBURST   | out |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWLOCK    | out |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWCACHE   | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWPROT    | out |    3|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWQOS     | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWREGION  | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_AWUSER    | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WVALID    | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WREADY    |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WDATA     | out |   32|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WSTRB     | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WLAST     | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WID       | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_WUSER     | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARVALID   | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARREADY   |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARADDR    | out |   32|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARID      | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARLEN     | out |    8|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARSIZE    | out |    3|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARBURST   | out |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARLOCK    | out |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARCACHE   | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARPROT    | out |    3|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARQOS     | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARREGION  | out |    4|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_ARUSER    | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RVALID    |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RREADY    | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RDATA     |  in |   32|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RLAST     |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RID       |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RUSER     |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_RRESP     |  in |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_BVALID    |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_BREADY    | out |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_BRESP     |  in |    2|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_BID       |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|m_axi_pointNumber_BUSER     |  in |    1|    m_axi   |    pointNumber    |    pointer   |
+|video_in_TDATA              |  in |   24|    axis    | video_in_V_data_V |    pointer   |
+|video_in_TKEEP              |  in |    3|    axis    | video_in_V_keep_V |    pointer   |
+|video_in_TSTRB              |  in |    3|    axis    | video_in_V_strb_V |    pointer   |
+|video_in_TUSER              |  in |    1|    axis    | video_in_V_user_V |    pointer   |
+|video_in_TLAST              |  in |    1|    axis    | video_in_V_last_V |    pointer   |
+|video_in_TID                |  in |    1|    axis    |  video_in_V_id_V  |    pointer   |
+|video_in_TDEST              |  in |    1|    axis    | video_in_V_dest_V |    pointer   |
+|video_in_TVALID             |  in |    1|    axis    | video_in_V_dest_V |    pointer   |
+|video_in_TREADY             | out |    1|    axis    | video_in_V_dest_V |    pointer   |
++----------------------------+-----+-----+------------+-------------------+--------------+
+

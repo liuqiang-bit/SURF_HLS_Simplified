@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="surf_Simplified.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_surf_Simplified_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="AESL_inst_surf_Simplified_group">
+      <obj_property name="label">AESL_inst_surf_Simplified</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/surf_Simplified_entr_U0_activity">
+         <obj_property name="ElementShortName">surf_Simplified_entr_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">surf_Simplified_entr_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/AXIvideo2Mat_U0_activity">
+         <obj_property name="ElementShortName">AXIvideo2Mat_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">AXIvideo2Mat_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/integralImg_U0_activity">
+         <obj_property name="ElementShortName">integralImg_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">integralImg_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/Block_codeRepl47_pro_U0_activity">
+         <obj_property name="ElementShortName">Block_codeRepl47_pro_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">Block_codeRepl47_pro_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/HessianDetector_U0_activity">
+         <obj_property name="ElementShortName">HessianDetector_U0_activity</obj_property>
+         <obj_property name="ObjectShortName">HessianDetector_U0_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="surf_Simplified_entr_U0_group">
+         <obj_property name="label">surf_Simplified_entr_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="surf_Simplified_entr_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="surf_Simplified_entr_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="surf_Simplified_entr_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="keyPoints_V_out_group">
+               <obj_property name="label">keyPoints_V_out(keyPoints_V_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/keyPoints_V_out_blk_n">
+                  <obj_property name="ElementShortName">keyPoints_V_out_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_out_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/keyPoints_V_out_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/keyPoints_V_out_full_n">
+                  <obj_property name="ElementShortName">keyPoints_V_out_full_n</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_out_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/keyPoints_V_out_write">
+                  <obj_property name="ElementShortName">keyPoints_V_out_write</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_out_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="kpn_out_group">
+               <obj_property name="label">kpn_out(kpn_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/kpn_out_blk_n">
+                  <obj_property name="ElementShortName">kpn_out_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">kpn_out_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/kpn_out_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/kpn_out_full_n">
+                  <obj_property name="ElementShortName">kpn_out_full_n</obj_property>
+                  <obj_property name="ObjectShortName">kpn_out_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/surf_Simplified_entr_U0/kpn_out_write">
+                  <obj_property name="ElementShortName">kpn_out_write</obj_property>
+                  <obj_property name="ObjectShortName">kpn_out_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="AXIvideo2Mat_U0_group">
+         <obj_property name="label">AXIvideo2Mat_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="AXIvideo2Mat_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="AXIvideo2Mat_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="AXIvideo2Mat_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="img_data_stream_0_V_group">
+               <obj_property name="label">img_data_stream_0_V(img_data_stream_0_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_0_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_0_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_0_V_full_n">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_0_V_write">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_write</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="img_data_stream_1_V_group">
+               <obj_property name="label">img_data_stream_1_V(img_data_stream_1_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_1_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_1_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_1_V_full_n">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_1_V_write">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_write</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="img_data_stream_2_V_group">
+               <obj_property name="label">img_data_stream_2_V(img_data_stream_2_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_2_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_2_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_2_V_full_n">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/AXIvideo2Mat_U0/img_data_stream_2_V_write">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_write</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="integralImg_U0_group">
+         <obj_property name="label">integralImg_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="integralImg_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="img_data_stream_0_V_group">
+               <obj_property name="label">img_data_stream_0_V(img_data_stream_0_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_0_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_0_V_dout">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_dout[7:0]</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_dout[7:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_0_V_empty_n">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_0_V_read">
+                  <obj_property name="ElementShortName">img_data_stream_0_V_read</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_0_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="img_data_stream_1_V_group">
+               <obj_property name="label">img_data_stream_1_V(img_data_stream_1_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_1_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_1_V_dout">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_dout[7:0]</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_dout[7:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_1_V_empty_n">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_1_V_read">
+                  <obj_property name="ElementShortName">img_data_stream_1_V_read</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_1_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="img_data_stream_2_V_group">
+               <obj_property name="label">img_data_stream_2_V(img_data_stream_2_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_2_V_blk_n">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_2_V_dout">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_dout[7:0]</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_dout[7:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_2_V_empty_n">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/img_data_stream_2_V_read">
+                  <obj_property name="ElementShortName">img_data_stream_2_V_read</obj_property>
+                  <obj_property name="ObjectShortName">img_data_stream_2_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="integralImg_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="integralImg_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="sum_V_group">
+               <obj_property name="label">sum_V(sum_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/sum_V_blk_n">
+                  <obj_property name="ElementShortName">sum_V_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/sum_V_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/sum_V_full_n">
+                  <obj_property name="ElementShortName">sum_V_full_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/integralImg_U0/sum_V_write">
+                  <obj_property name="ElementShortName">sum_V_write</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="Block_codeRepl47_pro_U0_group">
+         <obj_property name="label">Block_codeRepl47_pro_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="Block_codeRepl47_pro_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="Block_codeRepl47_pro_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="Block_codeRepl47_pro_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="this_assign_1_out_out_group">
+               <obj_property name="label">this_assign_1_out_out(this_assign_1_loc_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/this_assign_1_out_out_blk_n">
+                  <obj_property name="ElementShortName">this_assign_1_out_out_blk_n</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_out_out_blk_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/this_assign_1_out_out_din">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/this_assign_1_out_out_full_n">
+                  <obj_property name="ElementShortName">this_assign_1_out_out_full_n</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_out_out_full_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/Block_codeRepl47_pro_U0/this_assign_1_out_out_write">
+                  <obj_property name="ElementShortName">this_assign_1_out_out_write</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_out_out_write</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="HessianDetector_U0_group">
+         <obj_property name="label">HessianDetector_U0</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/calcLayerDetAndTrace_U0_activity">
+            <obj_property name="ElementShortName">calcLayerDetAndTrace_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">calcLayerDetAndTrace_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/findCharacteristicPo_U0_activity">
+            <obj_property name="ElementShortName">findCharacteristicPo_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">findCharacteristicPo_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="HessianDetector_U0_Input_group">
+            <obj_property name="label">Input Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="keyPoints_V_offset_group">
+               <obj_property name="label">keyPoints_V_offset(keyPoints_V_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/keyPoints_V_offset_dout">
+                  <obj_property name="ElementShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/keyPoints_V_offset_empty_n">
+                  <obj_property name="ElementShortName">keyPoints_V_offset_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_offset_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/keyPoints_V_offset_read">
+                  <obj_property name="ElementShortName">keyPoints_V_offset_read</obj_property>
+                  <obj_property name="ObjectShortName">keyPoints_V_offset_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="pointNumber_offset_group">
+               <obj_property name="label">pointNumber_offset(kpn_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/pointNumber_offset_dout">
+                  <obj_property name="ElementShortName">pointNumber_offset_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">pointNumber_offset_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/pointNumber_offset_empty_n">
+                  <obj_property name="ElementShortName">pointNumber_offset_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">pointNumber_offset_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/pointNumber_offset_read">
+                  <obj_property name="ElementShortName">pointNumber_offset_read</obj_property>
+                  <obj_property name="ObjectShortName">pointNumber_offset_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="this_assign_1_loc_group">
+               <obj_property name="label">this_assign_1_loc(this_assign_1_loc_c_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/this_assign_1_loc_dout">
+                  <obj_property name="ElementShortName">this_assign_1_loc_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_loc_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/this_assign_1_loc_empty_n">
+                  <obj_property name="ElementShortName">this_assign_1_loc_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_loc_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/this_assign_1_loc_read">
+                  <obj_property name="ElementShortName">this_assign_1_loc_read</obj_property>
+                  <obj_property name="ObjectShortName">this_assign_1_loc_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="sum_V_group">
+               <obj_property name="label">sum_V(sum_V_U, FIFO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sum_V_dout">
+                  <obj_property name="ElementShortName">sum_V_dout[31:0]</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_dout[31:0]</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sum_V_empty_n">
+                  <obj_property name="ElementShortName">sum_V_empty_n</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_empty_n</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sum_V_read">
+                  <obj_property name="ElementShortName">sum_V_read</obj_property>
+                  <obj_property name="ObjectShortName">sum_V_read</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="sizes_group">
+               <obj_property name="label">sizes(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sizes_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sizes_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/sizes_ce0">
+                  <obj_property name="ElementShortName">sizes_ce0</obj_property>
+                  <obj_property name="ObjectShortName">sizes_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dx_V_0_group">
+               <obj_property name="label">Dx_V_0(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_0_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_0_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_0_ce0">
+                  <obj_property name="ElementShortName">Dx_V_0_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dx_V_0_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dx_V_1_group">
+               <obj_property name="label">Dx_V_1(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_1_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_1_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_1_ce0">
+                  <obj_property name="ElementShortName">Dx_V_1_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dx_V_1_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dx_V_2_group">
+               <obj_property name="label">Dx_V_2(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_2_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_2_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_2_ce0">
+                  <obj_property name="ElementShortName">Dx_V_2_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dx_V_2_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dx_V_3_group">
+               <obj_property name="label">Dx_V_3(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_3_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_3_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_3_ce0">
+                  <obj_property name="ElementShortName">Dx_V_3_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dx_V_3_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dx_V_4_group">
+               <obj_property name="label">Dx_V_4(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_4_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_4_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dx_V_4_ce0">
+                  <obj_property name="ElementShortName">Dx_V_4_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dx_V_4_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dy_V_0_group">
+               <obj_property name="label">Dy_V_0(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_0_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_0_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_0_ce0">
+                  <obj_property name="ElementShortName">Dy_V_0_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dy_V_0_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dy_V_1_group">
+               <obj_property name="label">Dy_V_1(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_1_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_1_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_1_ce0">
+                  <obj_property name="ElementShortName">Dy_V_1_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dy_V_1_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dy_V_2_group">
+               <obj_property name="label">Dy_V_2(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_2_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_2_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_2_ce0">
+                  <obj_property name="ElementShortName">Dy_V_2_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dy_V_2_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dy_V_3_group">
+               <obj_property name="label">Dy_V_3(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_3_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_3_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_3_ce0">
+                  <obj_property name="ElementShortName">Dy_V_3_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dy_V_3_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dy_V_4_group">
+               <obj_property name="label">Dy_V_4(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_4_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_4_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dy_V_4_ce0">
+                  <obj_property name="ElementShortName">Dy_V_4_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dy_V_4_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dxy_V_2_group">
+               <obj_property name="label">Dxy_V_2(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_2_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_2_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_2_ce0">
+                  <obj_property name="ElementShortName">Dxy_V_2_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dxy_V_2_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dxy_V_3_group">
+               <obj_property name="label">Dxy_V_3(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_3_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_3_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_3_ce0">
+                  <obj_property name="ElementShortName">Dxy_V_3_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dxy_V_3_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dxy_V_0_group">
+               <obj_property name="label">Dxy_V_0(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_0_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_0_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_0_ce0">
+                  <obj_property name="ElementShortName">Dxy_V_0_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dxy_V_0_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dxy_V_1_group">
+               <obj_property name="label">Dxy_V_1(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_1_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_1_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_1_ce0">
+                  <obj_property name="ElementShortName">Dxy_V_1_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dxy_V_1_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="Dxy_V_4_group">
+               <obj_property name="label">Dxy_V_4(PIPO)</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_4_address0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_4_q0">
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/Dxy_V_4_ce0">
+                  <obj_property name="ElementShortName">Dxy_V_4_ce0</obj_property>
+                  <obj_property name="ObjectShortName">Dxy_V_4_ce0</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="HessianDetector_U0_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="HessianDetector_U0_Output_group">
+            <obj_property name="label">Output Channels</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="calcLayerDetAndTrace_U0_group">
+            <obj_property name="label">calcLayerDetAndTrace_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="calcLayerDetAndTrace_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="this_assign_1_reload_group">
+                  <obj_property name="label">this_assign_1_reload(this_assign_1_loc_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_blk_n">
+                     <obj_property name="ElementShortName">this_assign_1_reload_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_dout">
+                     <obj_property name="ElementShortName">this_assign_1_reload_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_empty_n">
+                     <obj_property name="ElementShortName">this_assign_1_reload_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_read">
+                     <obj_property name="ElementShortName">this_assign_1_reload_read</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="keyPoints_V_offset_group">
+                  <obj_property name="label">keyPoints_V_offset(keyPoints_V_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_blk_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_dout">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_empty_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_read">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_read</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="pointNumber_offset_group">
+                  <obj_property name="label">pointNumber_offset(kpn_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_blk_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_dout">
+                     <obj_property name="ElementShortName">pointNumber_offset_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_empty_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_read">
+                     <obj_property name="ElementShortName">pointNumber_offset_read</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="sum_V_group">
+                  <obj_property name="label">sum_V(sum_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sum_V_blk_n">
+                     <obj_property name="ElementShortName">sum_V_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">sum_V_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sum_V_dout">
+                     <obj_property name="ElementShortName">sum_V_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">sum_V_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sum_V_empty_n">
+                     <obj_property name="ElementShortName">sum_V_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">sum_V_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sum_V_read">
+                     <obj_property name="ElementShortName">sum_V_read</obj_property>
+                     <obj_property name="ObjectShortName">sum_V_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="sizes_group">
+                  <obj_property name="label">sizes(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sizes_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sizes_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/sizes_ce0">
+                     <obj_property name="ElementShortName">sizes_ce0</obj_property>
+                     <obj_property name="ObjectShortName">sizes_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dx_V_0_group">
+                  <obj_property name="label">Dx_V_0(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_0_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_0_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_0_ce0">
+                     <obj_property name="ElementShortName">Dx_V_0_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dx_V_0_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dx_V_1_group">
+                  <obj_property name="label">Dx_V_1(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_1_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_1_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_1_ce0">
+                     <obj_property name="ElementShortName">Dx_V_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dx_V_1_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dx_V_2_group">
+                  <obj_property name="label">Dx_V_2(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_2_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_2_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_2_ce0">
+                     <obj_property name="ElementShortName">Dx_V_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dx_V_2_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dx_V_3_group">
+                  <obj_property name="label">Dx_V_3(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_3_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_3_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_3_ce0">
+                     <obj_property name="ElementShortName">Dx_V_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dx_V_3_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dx_V_4_group">
+                  <obj_property name="label">Dx_V_4(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_4_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_4_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dx_V_4_ce0">
+                     <obj_property name="ElementShortName">Dx_V_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dx_V_4_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dy_V_0_group">
+                  <obj_property name="label">Dy_V_0(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_0_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_0_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_0_ce0">
+                     <obj_property name="ElementShortName">Dy_V_0_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dy_V_0_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dy_V_1_group">
+                  <obj_property name="label">Dy_V_1(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_1_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_1_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_1_ce0">
+                     <obj_property name="ElementShortName">Dy_V_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dy_V_1_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dy_V_2_group">
+                  <obj_property name="label">Dy_V_2(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_2_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_2_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_2_ce0">
+                     <obj_property name="ElementShortName">Dy_V_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dy_V_2_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dy_V_3_group">
+                  <obj_property name="label">Dy_V_3(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_3_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_3_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_3_ce0">
+                     <obj_property name="ElementShortName">Dy_V_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dy_V_3_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dy_V_4_group">
+                  <obj_property name="label">Dy_V_4(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_4_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_4_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dy_V_4_ce0">
+                     <obj_property name="ElementShortName">Dy_V_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dy_V_4_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dxy_V_2_group">
+                  <obj_property name="label">Dxy_V_2(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_2_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_2_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_2_ce0">
+                     <obj_property name="ElementShortName">Dxy_V_2_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dxy_V_2_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dxy_V_3_group">
+                  <obj_property name="label">Dxy_V_3(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_3_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_3_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_3_ce0">
+                     <obj_property name="ElementShortName">Dxy_V_3_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dxy_V_3_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dxy_V_0_group">
+                  <obj_property name="label">Dxy_V_0(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_0_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_0_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_0_ce0">
+                     <obj_property name="ElementShortName">Dxy_V_0_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dxy_V_0_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dxy_V_1_group">
+                  <obj_property name="label">Dxy_V_1(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_1_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_1_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_1_ce0">
+                     <obj_property name="ElementShortName">Dxy_V_1_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dxy_V_1_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Dxy_V_4_group">
+                  <obj_property name="label">Dxy_V_4(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_4_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_4_q0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/Dxy_V_4_ce0">
+                     <obj_property name="ElementShortName">Dxy_V_4_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Dxy_V_4_ce0</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="calcLayerDetAndTrace_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="calcLayerDetAndTrace_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="det0_V_V_group">
+                  <obj_property name="label">det0_V_V(dets_0_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det0_V_V_blk_n">
+                     <obj_property name="ElementShortName">det0_V_V_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det0_V_V_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det0_V_V_full_n">
+                     <obj_property name="ElementShortName">det0_V_V_full_n</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det0_V_V_write">
+                     <obj_property name="ElementShortName">det0_V_V_write</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_write</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="det1_V_V3_group">
+                  <obj_property name="label">det1_V_V3(dets_1_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det1_V_V3_blk_n">
+                     <obj_property name="ElementShortName">det1_V_V3_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det1_V_V3_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det1_V_V3_full_n">
+                     <obj_property name="ElementShortName">det1_V_V3_full_n</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det1_V_V3_write">
+                     <obj_property name="ElementShortName">det1_V_V3_write</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_write</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="det2_V_V6_group">
+                  <obj_property name="label">det2_V_V6(dets_2_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det2_V_V6_blk_n">
+                     <obj_property name="ElementShortName">det2_V_V6_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det2_V_V6_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det2_V_V6_full_n">
+                     <obj_property name="ElementShortName">det2_V_V6_full_n</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/det2_V_V6_write">
+                     <obj_property name="ElementShortName">det2_V_V6_write</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_write</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="this_assign_1_reload_out_group">
+                  <obj_property name="label">this_assign_1_reload_out(this_assign_1_reload_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_out_blk_n">
+                     <obj_property name="ElementShortName">this_assign_1_reload_out_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_out_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_out_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_out_full_n">
+                     <obj_property name="ElementShortName">this_assign_1_reload_out_full_n</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_out_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/this_assign_1_reload_out_write">
+                     <obj_property name="ElementShortName">this_assign_1_reload_out_write</obj_property>
+                     <obj_property name="ObjectShortName">this_assign_1_reload_out_write</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="keyPoints_V_offset_out_group">
+                  <obj_property name="label">keyPoints_V_offset_out(keyPoints_V_offset_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_out_blk_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_out_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_out_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_out_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_out_full_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_out_full_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_out_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/keyPoints_V_offset_out_write">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_out_write</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_out_write</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="pointNumber_offset_out_group">
+                  <obj_property name="label">pointNumber_offset_out(pointNumber_offset_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_out_blk_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_out_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_out_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_out_din">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_out_full_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_out_full_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_out_full_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/calcLayerDetAndTrace_U0/pointNumber_offset_out_write">
+                     <obj_property name="ElementShortName">pointNumber_offset_out_write</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_out_write</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="findCharacteristicPo_U0_group">
+            <obj_property name="label">findCharacteristicPo_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="findCharacteristicPo_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="det0_V_V_group">
+                  <obj_property name="label">det0_V_V(dets_0_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det0_V_V_blk_n">
+                     <obj_property name="ElementShortName">det0_V_V_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det0_V_V_dout">
+                     <obj_property name="ElementShortName">det0_V_V_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det0_V_V_empty_n">
+                     <obj_property name="ElementShortName">det0_V_V_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det0_V_V_read">
+                     <obj_property name="ElementShortName">det0_V_V_read</obj_property>
+                     <obj_property name="ObjectShortName">det0_V_V_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="det1_V_V3_group">
+                  <obj_property name="label">det1_V_V3(dets_1_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det1_V_V3_blk_n">
+                     <obj_property name="ElementShortName">det1_V_V3_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det1_V_V3_dout">
+                     <obj_property name="ElementShortName">det1_V_V3_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det1_V_V3_empty_n">
+                     <obj_property name="ElementShortName">det1_V_V3_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det1_V_V3_read">
+                     <obj_property name="ElementShortName">det1_V_V3_read</obj_property>
+                     <obj_property name="ObjectShortName">det1_V_V3_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="det2_V_V6_group">
+                  <obj_property name="label">det2_V_V6(dets_2_V_V_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det2_V_V6_blk_n">
+                     <obj_property name="ElementShortName">det2_V_V6_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det2_V_V6_dout">
+                     <obj_property name="ElementShortName">det2_V_V6_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det2_V_V6_empty_n">
+                     <obj_property name="ElementShortName">det2_V_V6_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/det2_V_V6_read">
+                     <obj_property name="ElementShortName">det2_V_V6_read</obj_property>
+                     <obj_property name="ObjectShortName">det2_V_V6_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="hessianThreshold_V_group">
+                  <obj_property name="label">hessianThreshold_V(this_assign_1_reload_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/hessianThreshold_V_blk_n">
+                     <obj_property name="ElementShortName">hessianThreshold_V_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">hessianThreshold_V_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/hessianThreshold_V_dout">
+                     <obj_property name="ElementShortName">hessianThreshold_V_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">hessianThreshold_V_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/hessianThreshold_V_empty_n">
+                     <obj_property name="ElementShortName">hessianThreshold_V_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">hessianThreshold_V_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/hessianThreshold_V_read">
+                     <obj_property name="ElementShortName">hessianThreshold_V_read</obj_property>
+                     <obj_property name="ObjectShortName">hessianThreshold_V_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="keyPoints_V_offset_group">
+                  <obj_property name="label">keyPoints_V_offset(keyPoints_V_offset_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/keyPoints_V_offset_blk_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/keyPoints_V_offset_dout">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/keyPoints_V_offset_empty_n">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/keyPoints_V_offset_read">
+                     <obj_property name="ElementShortName">keyPoints_V_offset_read</obj_property>
+                     <obj_property name="ObjectShortName">keyPoints_V_offset_read</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="pointNumber_offset_group">
+                  <obj_property name="label">pointNumber_offset(pointNumber_offset_c_U, FIFO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/pointNumber_offset_blk_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_blk_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_blk_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/pointNumber_offset_dout">
+                     <obj_property name="ElementShortName">pointNumber_offset_dout[31:0]</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_dout[31:0]</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/pointNumber_offset_empty_n">
+                     <obj_property name="ElementShortName">pointNumber_offset_empty_n</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_empty_n</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/pointNumber_offset_read">
+                     <obj_property name="ElementShortName">pointNumber_offset_read</obj_property>
+                     <obj_property name="ObjectShortName">pointNumber_offset_read</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="findCharacteristicPo_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_surf_Simplified_top/AESL_inst_surf_Simplified/HessianDetector_U0/findCharacteristicPo_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="findCharacteristicPo_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

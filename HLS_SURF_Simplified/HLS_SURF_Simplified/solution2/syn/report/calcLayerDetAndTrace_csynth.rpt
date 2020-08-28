@@ -1,0 +1,414 @@
+
+
+================================================================
+== Vivado HLS Report for 'calcLayerDetAndTrace'
+================================================================
+* Date:           Tue Aug 18 14:35:01 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        HLS_SURF_Simplified
+* Solution:       solution2
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.326|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+-----------+---------+-----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |   min   |    max    |   min   |    max    |   Type  |
+    +---------+-----------+---------+-----------+---------+
+    |  1926807|  141533097|  1926807|  141533097|   none  |
+    +---------+-----------+---------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------+---------------------+-----+-----+-----+-----+----------+
+        |                                |                     |  Latency  |  Interval | Pipeline |
+        |            Instance            |        Module       | min | max | min | max |   Type   |
+        +--------------------------------+---------------------+-----+-----+-----+-----+----------+
+        |grp_calcHaarPattern_xy_fu_678   |calcHaarPattern_xy   |   29|   29|    4|    4| function |
+        |grp_calcHaarPattern_x_y_fu_805  |calcHaarPattern_x_y  |   22|   22|    3|    3| function |
+        +--------------------------------+---------------------+-----+-----+-----+-----+----------+
+
+        * Loop: 
+        +-----------------------------+---------+-----------+---------------+-----------+-----------+------+----------+
+        |                             |       Latency       |   Iteration   |  Initiation Interval  | Trip |          |
+        |          Loop Name          |   min   |    max    |    Latency    |  achieved |   target  | Count| Pipelined|
+        +-----------------------------+---------+-----------+---------------+-----------+-----------+------+----------+
+        |- calcLayerDetAndTrace_row   |  1926806|  141533096| 3206 ~ 235496 |          -|          -|   601|    no    |
+        | + calcLayerDetAndTrace_col  |     3204|     235494|    4 ~ 294    |          -|          -|   801|    no    |
+        +-----------------------------+---------+-----------+---------------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|   3373|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        0|     27|    7215|  37699|
+|Memory           |       44|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    446|
+|Register         |        -|      -|    1413|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       44|     27|    8628|  41518|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       15|     12|       8|     78|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------+----------------------+---------+-------+------+-------+
+    |            Instance            |        Module        | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +--------------------------------+----------------------+---------+-------+------+-------+
+    |grp_calcHaarPattern_x_y_fu_805  |calcHaarPattern_x_y   |        0|      5|  2772|  15575|
+    |grp_calcHaarPattern_xy_fu_678   |calcHaarPattern_xy    |        0|      5|  3343|  19657|
+    |surfDetector_dmulEe0_U138       |surfDetector_dmulEe0  |        0|     11|   299|    570|
+    |surfDetector_dsubDeQ_U137       |surfDetector_dsubDeQ  |        0|      3|   445|   1149|
+    |surfDetector_fmulcud_U134       |surfDetector_fmulcud  |        0|      3|   128|    320|
+    |surfDetector_fpexCeG_U136       |surfDetector_fpexCeG  |        0|      0|   100|    143|
+    |surfDetector_fptrBew_U135       |surfDetector_fptrBew  |        0|      0|   128|    285|
+    +--------------------------------+----------------------+---------+-------+------+-------+
+    |Total                           |                      |        0|     27|  7215|  37699|
+    +--------------------------------+----------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |    Memory   |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |sumBuf_0_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_1_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_2_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_3_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_4_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_5_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_6_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_7_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_8_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_9_U   |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_10_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_11_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_12_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_13_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_14_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_15_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_16_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_17_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_18_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_19_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_20_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    |sumBuf_21_U  |calcLayerDetAndTrfYi  |        2|  0|   0|   801|   32|     1|        25632|
+    +-------------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total        |                      |       44|  0|   0| 17622|  704|    22|       563904|
+    +-------------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+-----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+-----+------------+------------+
+    |cOffset_1_i_fu_1396_p2           |     +    |      0|  0|   11|          11|           5|
+    |cOffset_2_i_fu_1412_p2           |     +    |      0|  0|   11|          11|           6|
+    |cOffset_i_fu_1379_p2             |     +    |      0|  0|   11|          11|           5|
+    |c_fu_1347_p2                     |     +    |      0|  0|   10|          10|           1|
+    |rIndex_fu_1027_p2                |     +    |      0|  0|   32|          32|           1|
+    |r_fu_1015_p2                     |     +    |      0|  0|   10|          10|           1|
+    |val_assign_op4_i_cas_fu_1297_p2  |     +    |      0|  0|    7|           5|           5|
+    |val_assign_op5_i_cas_fu_1267_p2  |     +    |      0|  0|    7|           5|           5|
+    |tmp_224_fu_1134_p2               |     -    |      0|  0|    8|           8|           8|
+    |tmp_228_fu_1164_p2               |     -    |      0|  0|    8|           8|           8|
+    |ap_block_state100                |    and   |      0|  0|    1|           1|           1|
+    |ap_block_state198                |    and   |      0|  0|    1|           1|           1|
+    |ap_block_state296                |    and   |      0|  0|    1|           1|           1|
+    |ap_block_state3                  |    and   |      0|  0|    1|           1|           1|
+    |or_cond_1_i_fu_1407_p2           |    and   |      0|  0|    1|           1|           1|
+    |or_cond_2_i_fu_1423_p2           |    and   |      0|  0|    1|           1|           1|
+    |or_cond_i_fu_1391_p2             |    and   |      0|  0|    1|           1|           1|
+    |p_demorgan_fu_1218_p2            |    and   |      0|  0|  176|         176|         176|
+    |rOffset_2_i_fu_1327_p2           |    and   |      0|  0|    1|           1|           1|
+    |tmp_238_fu_1230_p2               |    and   |      0|  0|  176|         176|         176|
+    |tmp_239_fu_1236_p2               |    and   |      0|  0|  176|         176|         176|
+    |exitcond1_i_fu_1009_p2           |   icmp   |      0|  0|    5|          10|          10|
+    |exitcond2_i_fu_1341_p2           |   icmp   |      0|  0|    5|          10|           9|
+    |icmp_fu_1291_p2                  |   icmp   |      0|  0|    3|           6|           1|
+    |tmp_223_fu_1128_p2               |   icmp   |      0|  0|    4|           8|           8|
+    |tmp_98_2_i_fu_1311_p2            |   icmp   |      0|  0|    5|          10|           5|
+    |tmp_98_i_fu_1257_p2              |   icmp   |      0|  0|    5|          10|           4|
+    |tmp_99_1_i_fu_1401_p2            |   icmp   |      0|  0|    5|          11|           1|
+    |tmp_99_2_i_fu_1417_p2            |   icmp   |      0|  0|    5|          11|           1|
+    |tmp_99_i_fu_1385_p2              |   icmp   |      0|  0|    5|          11|           1|
+    |tmp_i_27_fu_1041_p2              |   icmp   |      0|  0|    5|          10|           5|
+    |tmp_i_fu_1021_p2                 |   icmp   |      0|  0|   12|          32|           5|
+    |tmp_236_fu_1212_p2               |   lshr   |      0|  0|  630|           2|         176|
+    |Hi_assign_fu_1118_p2             |    or    |      0|  0|    8|           3|           8|
+    |ap_block_state1                  |    or    |      0|  0|    1|           1|           1|
+    |p_Result_s_fu_1242_p2            |    or    |      0|  0|  176|         176|         176|
+    |tmp_130_fu_1087_p2               |    or    |      0|  0|  168|         168|         168|
+    |rIndex_1_fu_1033_p3              |  select  |      0|  0|   32|           1|          32|
+    |rOffset_1_i_fu_1303_p3           |  select  |      0|  0|    5|           1|           5|
+    |rOffset_i_fu_1273_p3             |  select  |      0|  0|    5|           1|           5|
+    |tmp_225_fu_1140_p3               |  select  |      0|  0|    8|           1|           8|
+    |tmp_226_fu_1148_p3               |  select  |      0|  0|    8|           1|           8|
+    |tmp_227_fu_1156_p3               |  select  |      0|  0|    8|           1|           8|
+    |tmp_234_fu_1198_p3               |  select  |      0|  0|  176|           1|         176|
+    |tmp_232_fu_1182_p2               |    shl   |      0|  0|  630|         176|         176|
+    |tmp_235_fu_1206_p2               |    shl   |      0|  0|  630|           2|         176|
+    |tmp_237_fu_1224_p2               |    xor   |      0|  0|  176|         176|           2|
+    |val_assign_op_cast_i_fu_1321_p2  |    xor   |      0|  0|    2|           1|           2|
+    +---------------------------------+----------+-------+---+-----+------------+------------+
+    |Total                            |          |      0|  0| 3373|        1488|        1758|
+    +---------------------------------+----------+-------+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |                     Name                     | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                     |  11|        297|    1|        297|
+    |ap_done                                       |   3|          2|    1|          2|
+    |c_i_reg_667                                   |   3|          2|   10|         20|
+    |det0_V_blk_n                                  |   3|          2|    1|          2|
+    |det1_V3_blk_n                                 |   3|          2|    1|          2|
+    |det2_V6_blk_n                                 |   3|          2|    1|          2|
+    |grp_calcHaarPattern_x_y_fu_805_box_0_0_read   |   4|          5|   32|        160|
+    |grp_calcHaarPattern_x_y_fu_805_box_0_1_read   |   4|          5|   32|        160|
+    |grp_calcHaarPattern_x_y_fu_805_box_0_2_read   |   4|          6|   32|        192|
+    |grp_calcHaarPattern_x_y_fu_805_box_0_3_read   |   4|          6|   32|        192|
+    |grp_calcHaarPattern_x_y_fu_805_box_0_4_read   |   3|          4|   32|        128|
+    |grp_calcHaarPattern_x_y_fu_805_box_1_0_read   |   4|          5|   32|        160|
+    |grp_calcHaarPattern_x_y_fu_805_box_1_1_read   |   4|          5|   32|        160|
+    |grp_calcHaarPattern_x_y_fu_805_box_1_2_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_1_3_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_1_4_read   |   3|          4|   32|        128|
+    |grp_calcHaarPattern_x_y_fu_805_box_2_0_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_2_1_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_2_2_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_2_3_read   |   4|          7|   32|        224|
+    |grp_calcHaarPattern_x_y_fu_805_box_2_4_read   |   3|          4|   32|        128|
+    |grp_calcHaarPattern_x_y_fu_805_cOffset        |   3|          4|   11|         44|
+    |grp_calcHaarPattern_x_y_fu_805_rOffset        |   3|          4|    5|         20|
+    |grp_calcHaarPattern_x_y_fu_805_sumBufIndex_V  |   3|          3|  176|        528|
+    |grp_calcHaarPattern_xy_fu_678_box_0_0_read    |   3|          3|   32|         96|
+    |grp_calcHaarPattern_xy_fu_678_box_0_1_read    |   3|          3|   32|         96|
+    |grp_calcHaarPattern_xy_fu_678_box_0_2_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_0_3_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_0_4_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_1_0_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_1_1_read    |   3|          3|   32|         96|
+    |grp_calcHaarPattern_xy_fu_678_box_1_2_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_1_3_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_1_4_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_2_0_read    |   3|          3|   32|         96|
+    |grp_calcHaarPattern_xy_fu_678_box_2_1_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_2_2_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_2_3_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_2_4_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_3_0_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_3_1_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_3_2_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_3_3_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_box_3_4_read    |   3|          4|   32|        128|
+    |grp_calcHaarPattern_xy_fu_678_cOffset         |   3|          4|   11|         44|
+    |grp_calcHaarPattern_xy_fu_678_rOffset         |   3|          4|    5|         20|
+    |grp_fu_949_p0                                 |   3|          3|   32|         96|
+    |grp_fu_956_p0                                 |   3|          3|   64|        192|
+    |grp_fu_956_p1                                 |   3|          3|   64|        192|
+    |p_Val2_s_fu_306                               |   3|          2|  176|        352|
+    |rIndex_i_reg_645                              |   3|          2|   32|         64|
+    |real_start                                    |   3|          2|    1|          2|
+    |sumBuf_0_address0                             |   3|          4|   10|         40|
+    |sumBuf_0_address1                             |   3|          3|   10|         30|
+    |sumBuf_0_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_0_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_10_address0                            |   3|          4|   10|         40|
+    |sumBuf_10_address1                            |   3|          3|   10|         30|
+    |sumBuf_10_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_10_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_11_address0                            |   3|          4|   10|         40|
+    |sumBuf_11_address1                            |   3|          3|   10|         30|
+    |sumBuf_11_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_11_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_12_address0                            |   3|          4|   10|         40|
+    |sumBuf_12_address1                            |   3|          3|   10|         30|
+    |sumBuf_12_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_12_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_13_address0                            |   3|          4|   10|         40|
+    |sumBuf_13_address1                            |   3|          3|   10|         30|
+    |sumBuf_13_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_13_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_14_address0                            |   3|          4|   10|         40|
+    |sumBuf_14_address1                            |   3|          3|   10|         30|
+    |sumBuf_14_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_14_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_15_address0                            |   3|          4|   10|         40|
+    |sumBuf_15_address1                            |   3|          3|   10|         30|
+    |sumBuf_15_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_15_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_16_address0                            |   3|          4|   10|         40|
+    |sumBuf_16_address1                            |   3|          3|   10|         30|
+    |sumBuf_16_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_16_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_17_address0                            |   3|          4|   10|         40|
+    |sumBuf_17_address1                            |   3|          3|   10|         30|
+    |sumBuf_17_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_17_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_18_address0                            |   3|          4|   10|         40|
+    |sumBuf_18_address1                            |   3|          3|   10|         30|
+    |sumBuf_18_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_18_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_19_address0                            |   3|          4|   10|         40|
+    |sumBuf_19_address1                            |   3|          3|   10|         30|
+    |sumBuf_19_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_19_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_1_address0                             |   3|          4|   10|         40|
+    |sumBuf_1_address1                             |   3|          3|   10|         30|
+    |sumBuf_1_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_1_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_20_address0                            |   3|          4|   10|         40|
+    |sumBuf_20_address1                            |   3|          3|   10|         30|
+    |sumBuf_20_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_20_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_21_address0                            |   3|          4|   10|         40|
+    |sumBuf_21_address1                            |   3|          3|   10|         30|
+    |sumBuf_21_ce0                                 |   3|          4|    1|          4|
+    |sumBuf_21_ce1                                 |   3|          3|    1|          3|
+    |sumBuf_2_address0                             |   3|          4|   10|         40|
+    |sumBuf_2_address1                             |   3|          3|   10|         30|
+    |sumBuf_2_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_2_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_3_address0                             |   3|          4|   10|         40|
+    |sumBuf_3_address1                             |   3|          3|   10|         30|
+    |sumBuf_3_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_3_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_4_address0                             |   3|          4|   10|         40|
+    |sumBuf_4_address1                             |   3|          3|   10|         30|
+    |sumBuf_4_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_4_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_5_address0                             |   3|          4|   10|         40|
+    |sumBuf_5_address1                             |   3|          3|   10|         30|
+    |sumBuf_5_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_5_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_6_address0                             |   3|          4|   10|         40|
+    |sumBuf_6_address1                             |   3|          3|   10|         30|
+    |sumBuf_6_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_6_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_7_address0                             |   3|          4|   10|         40|
+    |sumBuf_7_address1                             |   3|          3|   10|         30|
+    |sumBuf_7_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_7_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_8_address0                             |   3|          4|   10|         40|
+    |sumBuf_8_address1                             |   3|          3|   10|         30|
+    |sumBuf_8_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_8_ce1                                  |   3|          3|    1|          3|
+    |sumBuf_9_address0                             |   3|          4|   10|         40|
+    |sumBuf_9_address1                             |   3|          3|   10|         30|
+    |sumBuf_9_ce0                                  |   3|          4|    1|          4|
+    |sumBuf_9_ce1                                  |   3|          3|    1|          3|
+    |sum_V_blk_n                                   |   3|          2|    1|          2|
+    |val_assign_reg_656                            |   3|          2|   10|         20|
+    +----------------------------------------------+----+-----------+-----+-----------+
+    |Total                                         | 446|        815| 2207|       8779|
+    +----------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------+-----+----+-----+-----------+
+    |                     Name                    |  FF | LUT| Bits| Const Bits|
+    +---------------------------------------------+-----+----+-----+-----------+
+    |MSB_V                                        |  176|   0|  176|          0|
+    |ap_CS_fsm                                    |  296|   0|  296|          0|
+    |ap_done_reg                                  |    1|   0|    1|          0|
+    |cOffset_1_i_reg_1517                         |   11|   0|   11|          0|
+    |cOffset_2_i_reg_1532                         |   11|   0|   11|          0|
+    |cOffset_i_reg_1502                           |   11|   0|   11|          0|
+    |c_cast_i_reg_1488                            |   10|   0|   11|          1|
+    |c_i_reg_667                                  |   10|   0|   10|          0|
+    |c_reg_1497                                   |   10|   0|   10|          0|
+    |grp_calcHaarPattern_x_y_fu_805_ap_start_reg  |    1|   0|    1|          0|
+    |grp_calcHaarPattern_xy_fu_678_ap_start_reg   |    1|   0|    1|          0|
+    |icmp_reg_1466                                |    1|   0|    1|          0|
+    |or_cond_1_i_reg_1523                         |    1|   0|    1|          0|
+    |or_cond_2_i_reg_1538                         |    1|   0|    1|          0|
+    |or_cond_i_reg_1508                           |    1|   0|    1|          0|
+    |p_Val2_s_fu_306                              |  176|   0|  176|          0|
+    |rIndex_1_reg_1443                            |   32|   0|   32|          0|
+    |rIndex_i_reg_645                             |   32|   0|   32|          0|
+    |rOffset_1_i_reg_1471                         |    5|   0|    5|          0|
+    |rOffset_2_cast_cast1_reg_1482                |    1|   0|    5|          4|
+    |rOffset_i_reg_1460                           |    5|   0|    5|          0|
+    |r_reg_1438                                   |   10|   0|   10|          0|
+    |reg_1004                                     |   64|   0|   64|          0|
+    |reg_965                                      |  176|   0|  176|          0|
+    |reg_971                                      |   32|   0|   32|          0|
+    |reg_976                                      |   32|   0|   32|          0|
+    |reg_981                                      |   32|   0|   32|          0|
+    |reg_986                                      |   32|   0|   32|          0|
+    |reg_991                                      |   64|   0|   64|          0|
+    |reg_998                                      |   64|   0|   64|          0|
+    |start_once_reg                               |    1|   0|    1|          0|
+    |tmp_14_reg_1512                              |   32|   0|   32|          0|
+    |tmp_16_reg_1527                              |   32|   0|   32|          0|
+    |tmp_18_reg_1542                              |   32|   0|   32|          0|
+    |tmp_243_reg_1451                             |    5|   0|    5|          0|
+    |tmp_98_2_i_reg_1477                          |    1|   0|    1|          0|
+    |tmp_98_i_reg_1455                            |    1|   0|    1|          0|
+    |val_assign_reg_656                           |   10|   0|   10|          0|
+    +---------------------------------------------+-----+----+-----+-----------+
+    |Total                                        | 1413|   0| 1418|          5|
+    +---------------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+----------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++----------------+-----+-----+------------+----------------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_start        |  in |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|start_full_n    |  in |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_done         | out |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_continue     |  in |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|start_out       | out |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|start_write     | out |    1| ap_ctrl_hs | calcLayerDetAndTrace | return value |
+|det0_V_din      | out |   32|   ap_fifo  |        det0_V        |    pointer   |
+|det0_V_full_n   |  in |    1|   ap_fifo  |        det0_V        |    pointer   |
+|det0_V_write    | out |    1|   ap_fifo  |        det0_V        |    pointer   |
+|det1_V3_din     | out |   32|   ap_fifo  |        det1_V3       |    pointer   |
+|det1_V3_full_n  |  in |    1|   ap_fifo  |        det1_V3       |    pointer   |
+|det1_V3_write   | out |    1|   ap_fifo  |        det1_V3       |    pointer   |
+|det2_V6_din     | out |   32|   ap_fifo  |        det2_V6       |    pointer   |
+|det2_V6_full_n  |  in |    1|   ap_fifo  |        det2_V6       |    pointer   |
+|det2_V6_write   | out |    1|   ap_fifo  |        det2_V6       |    pointer   |
+|sum_V_dout      |  in |   32|   ap_fifo  |         sum_V        |    pointer   |
+|sum_V_empty_n   |  in |    1|   ap_fifo  |         sum_V        |    pointer   |
+|sum_V_read      | out |    1|   ap_fifo  |         sum_V        |    pointer   |
++----------------+-----+-----+------------+----------------------+--------------+
+

@@ -1,0 +1,225 @@
+
+
+================================================================
+== Vivado HLS Report for 'HessianDetector'
+================================================================
+* Date:           Tue Aug 18 15:45:05 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        HLS_SURF_Simplified
+* Solution:       solution3
+* Product family: zynq
+* Target device:  xc7z020clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     9.326|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +---------+-----------+---------+-----------+----------+
+    |       Latency       |       Interval      | Pipeline |
+    |   min   |    max    |   min   |    max    |   Type   |
+    +---------+-----------+---------+-----------+----------+
+    |  1926807|  141533097|  1926808|  141533098| dataflow |
+    +---------+-----------+---------+-----------+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+----------------------+---------+-----------+---------+-----------+---------+
+        |                         |                      |       Latency       |       Interval      | Pipeline|
+        |         Instance        |        Module        |   min   |    max    |   min   |    max    |   Type  |
+        +-------------------------+----------------------+---------+-----------+---------+-----------+---------+
+        |calcLayerDetAndTrace_U0  |calcLayerDetAndTrace  |  1926807|  141533097|  1926807|  141533097|   none  |
+        |findCharacteristicPo_U0  |findCharacteristicPo  |  1404223|   30855526|  1404223|   30855526|   none  |
+        +-------------------------+----------------------+---------+-----------+---------+-----------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      1|
+|FIFO             |        0|      -|      15|    132|
+|Instance         |       60|     28|    9627|  43294|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |       60|     28|    9642|  43427|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |       21|     12|       9|     81|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+----------------------+---------+-------+------+-------+
+    |         Instance        |        Module        | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +-------------------------+----------------------+---------+-------+------+-------+
+    |calcLayerDetAndTrace_U0  |calcLayerDetAndTrace  |       44|     27|  8628|  41518|
+    |findCharacteristicPo_U0  |findCharacteristicPo  |       16|      1|   999|   1776|
+    +-------------------------+----------------------+---------+-------+------+-------+
+    |Total                    |                      |       60|     28|  9627|  43294|
+    +-------------------------+----------------------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +------------+---------+---+----+------+-----+---------+
+    |    Name    | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------+---------+---+----+------+-----+---------+
+    |dets_0_V_U  |        0|  5|  44|     2|   32|       64|
+    |dets_1_V_U  |        0|  5|  44|     2|   32|       64|
+    |dets_2_V_U  |        0|  5|  44|     2|   32|       64|
+    +------------+---------+---+----+------+-----+---------+
+    |Total       |        0| 15| 132|     6|   96|      192|
+    +------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +--------------+----------+-------+---+----+------------+------------+
+    | Variable Name| Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |ap_idle       |    and   |      0|  0|   1|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+    |Total         |          |      0|  0|   1|           1|           1|
+    +--------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-----------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++----------------------------+-----+-----+------------+-----------------+--------------+
+|m_axi_keyPoints_V_AWVALID   | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWREADY   |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWADDR    | out |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWID      | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWLEN     | out |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWSIZE    | out |    3|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWBURST   | out |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWLOCK    | out |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWCACHE   | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWPROT    | out |    3|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWQOS     | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWREGION  | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_AWUSER    | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WVALID    | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WREADY    |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WDATA     | out |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WSTRB     | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WLAST     | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WID       | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_WUSER     | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARVALID   | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARREADY   |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARADDR    | out |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARID      | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARLEN     | out |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARSIZE    | out |    3|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARBURST   | out |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARLOCK    | out |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARCACHE   | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARPROT    | out |    3|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARQOS     | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARREGION  | out |    4|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_ARUSER    | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RVALID    |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RREADY    | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RDATA     |  in |   32|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RLAST     |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RID       |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RUSER     |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_RRESP     |  in |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_BVALID    |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_BREADY    | out |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_BRESP     |  in |    2|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_BID       |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_keyPoints_V_BUSER     |  in |    1|    m_axi   |   keyPoints_V   |    pointer   |
+|m_axi_pointNumber_AWVALID   | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWREADY   |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWADDR    | out |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWID      | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWLEN     | out |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWSIZE    | out |    3|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWBURST   | out |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWLOCK    | out |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWCACHE   | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWPROT    | out |    3|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWQOS     | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWREGION  | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_AWUSER    | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WVALID    | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WREADY    |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WDATA     | out |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WSTRB     | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WLAST     | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WID       | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_WUSER     | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARVALID   | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARREADY   |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARADDR    | out |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARID      | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARLEN     | out |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARSIZE    | out |    3|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARBURST   | out |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARLOCK    | out |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARCACHE   | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARPROT    | out |    3|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARQOS     | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARREGION  | out |    4|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_ARUSER    | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RVALID    |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RREADY    | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RDATA     |  in |   32|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RLAST     |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RID       |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RUSER     |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_RRESP     |  in |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_BVALID    |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_BREADY    | out |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_BRESP     |  in |    2|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_BID       |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|m_axi_pointNumber_BUSER     |  in |    1|    m_axi   |   pointNumber   |    pointer   |
+|sum_V_dout                  |  in |   32|   ap_fifo  |      sum_V      |    pointer   |
+|sum_V_empty_n               |  in |    1|   ap_fifo  |      sum_V      |    pointer   |
+|sum_V_read                  | out |    1|   ap_fifo  |      sum_V      |    pointer   |
+|ap_clk                      |  in |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_rst                      |  in |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_start                    |  in |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_done                     | out |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_ready                    | out |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_idle                     | out |    1| ap_ctrl_hs | HessianDetector | return value |
+|ap_continue                 |  in |    1| ap_ctrl_hs | HessianDetector | return value |
++----------------------------+-----+-----+------------+-----------------+--------------+
+
