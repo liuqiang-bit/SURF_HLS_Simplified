@@ -104,11 +104,11 @@ SurfHB SURF::calcHaarPattern_x_y(int sumBuf[sumBufRow][sumCol], const SurfHB box
 	calcHaarPattern_kn:for(int kn = 0; kn < 3; kn++)
 	{
 		d += (
-			 sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][2] + cOffset]
-			-sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][0] + cOffset]
-			-sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][2] + cOffset]
-			+sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][0] + cOffset]
-			 ) * box[kn][4];
+				sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][2] + cOffset]
+			   -sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][0] + cOffset]
+			   -sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][2] + cOffset]
+			   +sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][0] + cOffset]
+		) * box[kn][4];
 	}
 	return d;
 }
@@ -120,11 +120,11 @@ SurfHB SURF::calcHaarPattern_xy(int sumBuf[sumBufRow][sumCol], const SurfHB box[
 	calcHaarPattern_kn:for(int kn = 0; kn < 4; kn++)
 	{
 		d += (
-			 sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][2] + cOffset]
-			-sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][0] + cOffset]
-			-sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][2] + cOffset]
-			+sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][0] + cOffset]
-			 ) * box[kn][4];
+				sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][2] + cOffset]
+			   -sumBuf[sumBufIndex.range((((int)box[kn][3] + 1 + rOffset) << 3) - 1, ((int)box[kn][3] + rOffset) << 3)][(int)box[kn][0] + cOffset]
+			   -sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][2] + cOffset]
+			   +sumBuf[sumBufIndex.range((((int)box[kn][1] + 1 + rOffset) << 3) - 1, ((int)box[kn][1] + rOffset) << 3)][(int)box[kn][0] + cOffset]
+		) * box[kn][4];
 	}
 	return d;
 }
@@ -179,12 +179,12 @@ void SURF::calcLayerDetAndTrace(
 #ifdef DEBUG
 	static int detT[nTotalLayers] = {0};
 #endif
-	static int sizes[nTotalLayers] = {9, 15, 21};						// 每一层用的 Harr模板的大小
+	static int sizes[nTotalLayers] = {9, 15, 21};								// 每一层用的 Harr模板的大小
 	static int sampleSteps[nTotalLayers] = {0, 0, 0};							// 每一层用的采样步长是2的sampleSteps[nTotalLayers]次幂
 
 	/*定义盒子滤波器*/
 	static const int NX = 3, NY = 3, NXY = 4;
-static const SurfHB Dx[nTotalLayers][NX][5] =
+	static const SurfHB Dx[nTotalLayers][NX][5] =
 	{
 #include "common/InputFile/Dx.txt"
 	};
@@ -202,42 +202,42 @@ static const SurfHB Dx[nTotalLayers][NX][5] =
 	ap_uint< sumBufRow << 3 > sumBufIndex;
 	static ap_uint<sumBufRow << 3> MSB = 0;
 
-		int rIndex = -1;
-		calcLayerDetAndTrace_row:for (int r = 0; r < sumRow; r++)
+	int rIndex = -1;
+	calcLayerDetAndTrace_row:for (int r = 0; r < sumRow; r++)
+	{
+		if(rIndex < sumBufRow - 1)
 		{
-			if(rIndex < sumBufRow - 1)
-			{
-				rIndex++;
-			}
-			else{
-				rIndex = 0;
-			}
+			rIndex++;
+		}
+		else{
+			rIndex = 0;
+		}
 
 #ifdef DEBUG
-			fout_rIndex << rIndex << std::endl;
+		fout_rIndex << rIndex << std::endl;
 #endif
 
-	#pragma HLS LOOP_TRIPCOUNT min=1 max=601
-			if(r < sumBufRow)
-			{
-				sumBufIndex.range(((r + 1) << 3) - 1, r << 3) = r;
+#pragma HLS LOOP_TRIPCOUNT min=1 max=601
+		if(r < sumBufRow)
+		{
+			sumBufIndex.range(((r + 1) << 3) - 1, r << 3) = r;
 #ifdef DEBUG
-		fout_sumBufIndex << "将第" << r <<"行写入sumBuf第" << rIndex << "行"<< std::endl;
-#endif
-			}
-			else{
-	#ifdef DEBUG
 			fout_sumBufIndex << "将第" << r <<"行写入sumBuf第" << rIndex << "行"<< std::endl;
-	#endif
+#endif
+		}
+		else{
+#ifdef DEBUG
+			fout_sumBufIndex << "将第" << r <<"行写入sumBuf第" << rIndex << "行"<< std::endl;
+#endif
 			MSB.range((sumBufRow << 3) - 1, (sumBufRow << 3) - 8) = sumBufIndex.range(7, 0);
 			sumBufIndex = (sumBufIndex >> 8) | MSB;
-	#ifdef DEBUG
+#ifdef DEBUG
 			for(int i = 0; i < sumBufRow; i++)
 			{
 				fout_sumBufIndex << "第" << i <<"行索引为：" << sumBufIndex.range(((i + 1) << 3) - 1, i << 3) << std::endl;
 			}
-	#endif
-			}
+#endif
+		}
 		calcLayerDetAndTrace_col:for (int c = 0; c < sumCol; c++)
 		{
 			static SurfHB dx = 0, dy = 0, dxy = 0, dt = 0, tt = 0;
@@ -285,27 +285,27 @@ static const SurfHB Dx[nTotalLayers][NX][5] =
 						dt  = dx * dy - (SurfHB)0.9 * dxy * dxy;
 
 						switch (k) {
-							case 0:
-								det0 << dt;
+						case 0:
+							det0 << dt;
 #ifdef DEBUG
 							detT[0]++;
 #endif
-								break;
-							case 1:
-								det1 << dt;
+							break;
+						case 1:
+							det1 << dt;
 #ifdef DEBUG
 							detT[1]++;
 #endif
-								break;
-							case 2:
-								det2 << dt;
+							break;
+						case 2:
+							det2 << dt;
 #ifdef DEBUG
 							detT[2]++;
 #endif
-								break;
+							break;
 
-							default:
-								break;
+						default:
+							break;
 						}
 
 #ifdef DEBUG
@@ -398,11 +398,11 @@ void SURF::findCharacteristicPoint(
 
 #ifdef DEBUG
 		fout_NIndex << "====================================初始索引为====================================" << std::endl;
-	for(int Nr = 0; Nr < 3; Nr++)
-	{
-		fout_NIndex << "第" << Nr <<"行索引为：" << RowIndex.range(((Nr + 1) << 1) - 1, Nr << 1) << std::endl;
-	}
-	fout_NIndex << "==================================================================================" << std::endl;
+		for(int Nr = 0; Nr < 3; Nr++)
+		{
+			fout_NIndex << "第" << Nr <<"行索引为：" << RowIndex.range(((Nr + 1) << 1) - 1, Nr << 1) << std::endl;
+		}
+		fout_NIndex << "==================================================================================" << std::endl;
 #endif
 
 		midIndex = middleIndices[ly];
@@ -410,7 +410,7 @@ void SURF::findCharacteristicPoint(
 		iSOffset = ((sizes[midIndex - 1] - 1) >> 1);
 
 		findCharacteristicPoint_r0:for(int r = 0; r < detRow[midIndex - 1]; r++)
-			{
+		{
 			if(rIndex < 3 - 1)
 			{
 				rIndex++;
@@ -420,98 +420,98 @@ void SURF::findCharacteristicPoint(
 			}
 
 #ifdef DEBUG
-				fout_NIndex << "将第" << r <<"行写入N的第" << rIndex << "行"<< std::endl;
+			fout_NIndex << "将第" << r <<"行写入N的第" << rIndex << "行"<< std::endl;
 #endif
 
-				if(r < 3){
-					RowIndex.range(((r + 1) << 1) - 1, r << 1) = r;
-				}
-				else{
-					MSB.range(5,4) = RowIndex.range(1,0);
-					RowIndex = (RowIndex >> 2) | MSB;
-				}
+			if(r < 3){
+				RowIndex.range(((r + 1) << 1) - 1, r << 1) = r;
+			}
+			else{
+				MSB.range(5,4) = RowIndex.range(1,0);
+				RowIndex = (RowIndex >> 2) | MSB;
+			}
 
 #ifdef DEBUG
-		for(int Nr = 0; Nr < 3; Nr++)
-		{
-			fout_NIndex << "第" << Nr <<"行索引为：" << RowIndex.range(((Nr + 1) << 1) - 1, Nr << 1) << std::endl;
-		}
+			for(int Nr = 0; Nr < 3; Nr++)
+			{
+				fout_NIndex << "第" << Nr <<"行索引为：" << RowIndex.range(((Nr + 1) << 1) - 1, Nr << 1) << std::endl;
+			}
 #endif
-				bRow[0] = RowIndex.range(1,0);
-				bRow[1] = RowIndex.range(3,2);
-				bRow[2] = RowIndex.range(5,4);
+			bRow[0] = RowIndex.range(1,0);
+			bRow[1] = RowIndex.range(3,2);
+			bRow[2] = RowIndex.range(5,4);
 
-				findCharacteristicPoint_c0:for(int c = 0; c < detCol[midIndex - 1]; c++)
+			findCharacteristicPoint_c0:for(int c = 0; c < detCol[midIndex - 1]; c++)
+			{
+
+				det0 >> N1[0][rIndex][c];
+#ifdef DEBUG
+				detT[0]++;
+#endif
+
+
+				if(r >= margin && r < detRow[midIndex] + margin && c >= margin && c < detCol[midIndex] + margin)
 				{
 
-							det0 >> N1[0][rIndex][c];
+					det1 >> N1[1][rIndex][c];
 #ifdef DEBUG
-							detT[0]++;
+					detT[1]++;
+#endif
+				}
+
+				int maxMargin = (margin << 1);
+				if(r >= maxMargin && r < detRow[midIndex + 1] + maxMargin && c >= maxMargin && c < detCol[midIndex + 1] + maxMargin)
+				{
+
+					det2 >> N1[2][rIndex][c];
+#ifdef DEBUG
+					detT[2]++;
 #endif
 
+				}
 
-					if(r >= margin && r < detRow[midIndex] + margin && c >= margin && c < detCol[midIndex] + margin)
+				int firstIndex = maxMargin + 2;
+				static SurfHB val0  = 0;
+				static int cOffset = -2;
+
+				/*开始寻找特征点*/
+				if(r >= firstIndex && r < detRow[midIndex + 1] + maxMargin && c >= firstIndex && c < detCol[midIndex + 1] + maxMargin)
+				{
+					val0 = N1[1][bRow[1]][c - 1];
+
+					if(val0 > hessianThreshold)
 					{
-
-								det1 >> N1[1][rIndex][c];
 #ifdef DEBUG
-							detT[1]++;
-#endif
-					}
-
-					int maxMargin = (margin << 1);
-					if(r >= maxMargin && r < detRow[midIndex + 1] + maxMargin && c >= maxMargin && c < detCol[midIndex + 1] + maxMargin)
-					{
-
-								det2 >> N1[2][rIndex][c];
-#ifdef DEBUG
-							detT[2]++;
+						fout_val0 << val0 << std::endl;
 #endif
 
-					}
-
-					int firstIndex = maxMargin + 2;
-					static SurfHB val0  = 0;
-					static int cOffset = -2;
-
-					/*开始寻找特征点*/
-					if(r >= firstIndex && r < detRow[midIndex + 1] + maxMargin && c >= firstIndex && c < detCol[midIndex + 1] + maxMargin)
-					{
-								val0 = N1[1][bRow[1]][c - 1];
-
-						if(val0 > hessianThreshold)
+						if(
+								val0 > N1[0][bRow[0]][c - 2] && val0 > N1[0][bRow[0]][c - 1] && val0 > N1[0][bRow[0]][c]
+							 && val0 > N1[0][bRow[1]][c - 2] && val0 > N1[0][bRow[1]][c - 1] && val0 > N1[0][bRow[1]][c]
+							 && val0 > N1[0][bRow[2]][c - 2] && val0 > N1[0][bRow[2]][c - 1] && val0 > N1[0][bRow[2]][c]
+							 && val0 > N1[1][bRow[0]][c - 2] && val0 > N1[1][bRow[0]][c - 1] && val0 > N1[1][bRow[0]][c]
+							 && val0 > N1[1][bRow[1]][c - 2] 							     && val0 > N1[1][bRow[1]][c]
+							 && val0 > N1[1][bRow[2]][c - 2] && val0 > N1[1][bRow[2]][c - 1] && val0 > N1[1][bRow[2]][c]
+							 && val0 > N1[2][bRow[0]][c - 2] && val0 > N1[2][bRow[0]][c - 1] && val0 > N1[2][bRow[0]][c]
+							 && val0 > N1[2][bRow[1]][c - 2] && val0 > N1[2][bRow[1]][c - 1] && val0 > N1[2][bRow[1]][c]
+							 && val0 > N1[2][bRow[2]][c - 2] && val0 > N1[2][bRow[2]][c - 1] && val0 > N1[2][bRow[2]][c])
 						{
-#ifdef DEBUG
-							fout_val0 << val0 << std::endl;
-#endif
+							/*将坐标转换到原图像中的坐标*/
+							point.range(31,17) = (r << sampleSteps[midIndex]) + iSOffset;
+							point.range(16,2 ) = (c << sampleSteps[midIndex]) + iSOffset;
+							point.range(1 ,0 ) = 0;
 
-									if(
-											val0 > N1[0][bRow[0]][c - 2] && val0 > N1[0][bRow[0]][c - 1] && val0 > N1[0][bRow[0]][c]
-									     && val0 > N1[0][bRow[1]][c - 2] && val0 > N1[0][bRow[1]][c - 1] && val0 > N1[0][bRow[1]][c]
-										 && val0 > N1[0][bRow[2]][c - 2] && val0 > N1[0][bRow[2]][c - 1] && val0 > N1[0][bRow[2]][c]
-										 && val0 > N1[1][bRow[0]][c - 2] && val0 > N1[1][bRow[0]][c - 1] && val0 > N1[1][bRow[0]][c]
-										 && val0 > N1[1][bRow[1]][c - 2] 							     && val0 > N1[1][bRow[1]][c]
-										 && val0 > N1[1][bRow[2]][c - 2] && val0 > N1[1][bRow[2]][c - 1] && val0 > N1[1][bRow[2]][c]
-									     && val0 > N1[2][bRow[0]][c - 2] && val0 > N1[2][bRow[0]][c - 1] && val0 > N1[2][bRow[0]][c]
-										 && val0 > N1[2][bRow[1]][c - 2] && val0 > N1[2][bRow[1]][c - 1] && val0 > N1[2][bRow[1]][c]
-										 && val0 > N1[2][bRow[2]][c - 2] && val0 > N1[2][bRow[2]][c - 1] && val0 > N1[2][bRow[2]][c])
-									{
-										/*将坐标转换到原图像中的坐标*/
-										point.range(31,17) = (r << sampleSteps[midIndex]) + iSOffset;
-										point.range(16,2) = (c << sampleSteps[midIndex]) + iSOffset;
-										point.range(1,0) = 0;
-
-										keyPoints[tmpPointNum] = point;
+							keyPoints[tmpPointNum] = point;
 
 #ifdef DEBUG
-										fout_keyPoint << "(" << point.range(31,17) << "," << point.range(16,2) << ")" << std::endl;
+							fout_keyPoint << "(" << point.range(31,17) << "," << point.range(16,2) << ")" << std::endl;
 #endif
-										tmpPointNum++;
-									}
+							tmpPointNum++;
 						}
 					}
 				}
 			}
+		}
 	}
 #ifdef DEBUG
 	std::cout << "det0~det8读取次数分别为：";
@@ -520,17 +520,16 @@ void SURF::findCharacteristicPoint(
 		std::cout << detT[i] <<" ";
 	}
 	std::cout << std::endl;
-		std::cout << "检测到" << tmpPointNum << "个特征点" << std::endl;
+	std::cout << "检测到" << tmpPointNum << "个特征点" << std::endl;
 #endif
-		*pointNumber = tmpPointNum;
-		tmpPointNum = 0;
+	*pointNumber = tmpPointNum;
+	tmpPointNum = 0;
 }
 
 void SURF::HessianDetector(hls::stream<int>& sum,  KeyPoint* keyPoints, unsigned int* pointNumber, int nOctaves, int nOctaveLayers, SurfHB hessianThreshold)
 {
 
 	hls::stream<SurfHB> dets[nTotalLayers];				// 每一层图像 对应的 Hessian行列式的值
-	//hls::stream<float> traces[nTotalLayers];			// 每一层图像 对应的 Hessian矩阵的迹的值
 
 	calcLayerDetAndTrace(
 			sum,
