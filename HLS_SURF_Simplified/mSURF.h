@@ -54,20 +54,31 @@ public:
 
 	void calcLayerDetAndTrace(
 			hls::stream<int>& sum,
-			hls::stream<SurfHB>& det0,
-			hls::stream<SurfHB>& det1,
-			hls::stream<SurfHB>& det2);
+			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+			int indexw);
 
 
 	void findCharacteristicPoint(
-			hls::stream<SurfHB>& det0,
-			hls::stream<SurfHB>& det1,
-			hls::stream<SurfHB>& det2,
+			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
 			SurfHB hessianThreshold,
 			KeyPoint* keyPoints,
-			unsigned int* pointNumber);
+			unsigned int* pointNumber,
+			int indexr);
 
-	void HessianDetector(hls::stream<int>& sum, KeyPoint* keyPoints, unsigned int* pointNumber, int nOctaves, int nOctaveLayers,SurfHB hessianThreshold);
+	void HessianDetector(
+			hls::stream<int>& sum,
+			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+			KeyPoint* keyPoints,
+			unsigned int* pointNumber,
+			int nOctaves,
+			int nOctaveLayers,
+			SurfHB hessianThreshold);
 };
 
 

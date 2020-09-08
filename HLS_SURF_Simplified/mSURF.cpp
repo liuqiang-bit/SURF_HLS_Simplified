@@ -1,5 +1,9 @@
 #include "mSURF.h"
 #include "hls_math.h"
+/*
+ * vivado HLS 2018.3需要包含，否则可能综合时报memcpy未定义
+ */
+#include "string.h"
 
 using namespace my;
 //#define DEBUG
@@ -8,37 +12,43 @@ using namespace my;
 #endif
 
 #ifdef DEBUG
-std::ofstream fout_sum("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/sum.txt");
-std::ofstream fout_pic("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/pic.txt");
-std::ofstream fout_HBox("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/HBox.txt");
-std::ofstream fout_sumBufIndex("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/sumBufIndex.txt");
-std::ofstream fout_size_sampleSteps("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/size_sampleSteps.txt");
-std::ofstream fout_middleIndices("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/size_middleIndices.txt");
-std::ofstream fout_det0("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det0.txt");
-std::ofstream fout_det1("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det1.txt");
-std::ofstream fout_det2("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det2.txt");
-std::ofstream fout_det3("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det3.txt");
-std::ofstream fout_det4("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det4.txt");
-std::ofstream fout_det5("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det5.txt");
-std::ofstream fout_det6("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det6.txt");
-std::ofstream fout_det7("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det7.txt");
-std::ofstream fout_det8("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det8.txt");
-std::ofstream fout_det0Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det0Index.txt");
-std::ofstream fout_det1Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det1Index.txt");
-std::ofstream fout_det2Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det2Index.txt");
-std::ofstream fout_det3Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det3Index.txt");
-std::ofstream fout_det4Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det4Index.txt");
-std::ofstream fout_det5Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det5Index.txt");
-std::ofstream fout_det6Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det6Index.txt");
-std::ofstream fout_det7Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det7Index.txt");
-std::ofstream fout_det8Index("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/det8Index.txt");
-std::ofstream fout_sum2buf("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/sum2buf.txt");
-std::ofstream fout_sumBuf("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/sumBuf.txt");
-std::ofstream fout_rIndex("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/rIndex.txt");
-std::ofstream fout_NIndex("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/NIndex.txt");
-std::ofstream fout_val0("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/val0.txt");
-std::ofstream fout_keyPoint("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/keyPoint.txt");
-std::ofstream fout_rOffset("C:/Users/GUDONG/Desktop/HLS_SURF/common/OutputFile/rOffset.txt");
+std::ofstream fout_sum("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/sum.txt");
+std::ofstream fout_pic("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/pic.txt");
+std::ofstream fout_HBox("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/HBox.txt");
+std::ofstream fout_sumBufIndex("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/sumBufIndex.txt");
+std::ofstream fout_size_sampleSteps("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/size_sampleSteps.txt");
+std::ofstream fout_middleIndices("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/size_middleIndices.txt");
+std::ofstream fout_det0("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det0.txt");
+std::ofstream fout_det1("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det1.txt");
+std::ofstream fout_det2("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det2.txt");
+std::ofstream fout_det3("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det3.txt");
+std::ofstream fout_det4("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det4.txt");
+std::ofstream fout_det5("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det5.txt");
+std::ofstream fout_det6("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det6.txt");
+std::ofstream fout_det7("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det7.txt");
+std::ofstream fout_det8("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det8.txt");
+std::ofstream fout_det0Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det0Index.txt");
+std::ofstream fout_det1Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det1Index.txt");
+std::ofstream fout_det2Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det2Index.txt");
+std::ofstream fout_det3Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det3Index.txt");
+std::ofstream fout_det4Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det4Index.txt");
+std::ofstream fout_det5Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det5Index.txt");
+std::ofstream fout_det6Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det6Index.txt");
+std::ofstream fout_det7Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det7Index.txt");
+std::ofstream fout_det8Index("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det8Index.txt");
+std::ofstream fout_sum2buf("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/sum2buf.txt");
+std::ofstream fout_sumBuf("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/sumBuf.txt");
+std::ofstream fout_rIndex("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/rIndex.txt");
+std::ofstream fout_NIndex("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/NIndex.txt");
+std::ofstream fout_val0("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/val0.txt");
+std::ofstream fout_keyPoint("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/keyPoint.txt");
+std::ofstream fout_rOffset("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/rOffset.txt");
+std::ofstream fout_det02mem("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det02mem.txt");
+std::ofstream fout_det12mem("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det12mem.txt");
+std::ofstream fout_det22mem("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/det22mem.txt");
+std::ofstream fout_mem2det0("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/mem2det0.txt");
+std::ofstream fout_mem2det1("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/mem2det1.txt");
+std::ofstream fout_mem2det2("C:/Users/GUDONG/Desktop/HLS_SURF_Simplified_v4_1/common/OutputFile/mem2det2.txt");
 #endif
 
 static int margin = 3;
@@ -86,7 +96,7 @@ void SURF::integralImg(hls::Mat<600, 800, HLS_8UC3>& img, hls::stream<int>& dst)
 			dst << d;
 
 #ifdef DEBUG
-			fout_pic << s2i << " ";
+			fout_pic << pix_val << " ";
 			fout_sum << d << " ";
 #endif
 		}
@@ -141,7 +151,7 @@ void SURF::createHessianBox_x_y(const int box[3][5], SurfHB dst[3][5], int oldSi
 		dst[i][4] = box[i][4] / (SurfHB)((dst[i][3] - dst[i][1]) * (dst[i][2] - dst[i][0]));
 
 #ifdef DEBUG
-		fout_HBox << dst[i].x1 <<" "<< dst[i].y1 <<" "<< dst[i].x2 <<" "<< dst[i].y2 <<" "<< dst[i].n << std::endl;
+		fout_HBox << dst[i][0] <<" "<< dst[i][1] <<" "<< dst[i][2] <<" "<< dst[i][3] <<" "<< dst[i][4] << std::endl;
 #endif
 	}
 #ifdef DEBUG
@@ -162,7 +172,7 @@ void SURF::createHessianBox_xy(const int box[4][5], SurfHB dst[4][5], int oldSiz
 		dst[i][4] = box[i][4] / (SurfHB)((dst[i][3] - dst[i][1]) * (dst[i][2] - dst[i][0]));
 
 #ifdef DEBUG
-		fout_HBox << dst[i].x1 <<" "<< dst[i].y1 <<" "<< dst[i].x2 <<" "<< dst[i].y2 <<" "<< dst[i].n << std::endl;
+		fout_HBox << dst[i][0] <<" "<< dst[i][1] <<" "<< dst[i][2] <<" "<< dst[i][3] <<" "<< dst[i][4] << std::endl;
 #endif
 	}
 #ifdef DEBUG
@@ -172,15 +182,24 @@ void SURF::createHessianBox_xy(const int box[4][5], SurfHB dst[4][5], int oldSiz
 
 void SURF::calcLayerDetAndTrace(
 		hls::stream<int>& sum,
-		hls::stream<SurfHB>& det0,
-		hls::stream<SurfHB>& det1,
-		hls::stream<SurfHB>& det2)
+		SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+		SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+		SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+		int indexw)
 {
 #ifdef DEBUG
-	static int detT[nTotalLayers] = {0};
+	int detT[nTotalLayers] = {0};
 #endif
+	int write_en[nTotalLayers] = {0};
+	int offset[3] = {0};
+	static const int detCol[nTotalLayers] = {791, 785, 779};
 	static int sizes[nTotalLayers] = {9, 15, 21};								// 每一层用的 Harr模板的大小
 	static int sampleSteps[nTotalLayers] = {0, 0, 0};							// 每一层用的采样步长是2的sampleSteps[nTotalLayers]次幂
+
+	SurfHB det0Buf[791], det1Buf[785], det2Buf[779];
+//#pragma HLS STREAM variable=det2Buf dim=1
+//#pragma HLS STREAM variable=det1Buf dim=1
+//#pragma HLS STREAM variable=det0Buf depth=791
 
 	/*定义盒子滤波器*/
 	static const int NX = 3, NY = 3, NXY = 4;
@@ -238,6 +257,8 @@ void SURF::calcLayerDetAndTrace(
 			}
 #endif
 		}
+
+		int bufOffset[3] = {0};
 		calcLayerDetAndTrace_col:for (int c = 0; c < sumCol; c++)
 		{
 			static SurfHB dx = 0, dy = 0, dxy = 0, dt = 0, tt = 0;
@@ -254,6 +275,7 @@ void SURF::calcLayerDetAndTrace(
 
 					if(r > sizes[k] && cOffset > 0)
 					{
+						write_en[k] = 1;
 						int rOffset = 0;
 						if(r < sumBufRow)
 						{
@@ -286,22 +308,13 @@ void SURF::calcLayerDetAndTrace(
 
 						switch (k) {
 						case 0:
-							det0 << dt;
-#ifdef DEBUG
-							detT[0]++;
-#endif
+							det0Buf[bufOffset[0]++] = dt;
 							break;
 						case 1:
-							det1 << dt;
-#ifdef DEBUG
-							detT[1]++;
-#endif
+							det1Buf[bufOffset[1]++] = dt;
 							break;
 						case 2:
-							det2 << dt;
-#ifdef DEBUG
-							detT[2]++;
-#endif
+							det2Buf[bufOffset[2]++] = dt;
 							break;
 
 						default:
@@ -328,7 +341,107 @@ void SURF::calcLayerDetAndTrace(
 						}
 #endif
 					}
+					else{
+						write_en[k] = 0;
+					}
 				}
+			}
+		}
+
+		write_loop:for(int en = 0; en < nTotalLayers; en++)
+		{
+			if(write_en[en])
+			{
+				switch (indexw) {
+				case 0:
+				{
+					switch (en) {
+					case 0:
+						memcpy(detA0_io + offset[en], det0Buf, detCol[en] << 2);
+						break;
+					case 1:
+						memcpy(detA1_io + offset[en], det1Buf, detCol[en] << 2);
+						break;
+					case 2:
+						memcpy(detA2_io + offset[en], det2Buf, detCol[en] << 2);
+						break;
+					default:
+						break;
+					}
+					break;
+				}
+				case 1:
+				{
+					switch (en) {
+					case 0:
+						memcpy(detB0_io + offset[en], det0Buf, detCol[en] << 2);
+						break;
+					case 1:
+						memcpy(detB1_io + offset[en], det1Buf, detCol[en] << 2);
+						break;
+					case 2:
+						memcpy(detB2_io + offset[en], det2Buf, detCol[en] << 2);
+						break;
+					default:
+						break;
+					}
+					break;
+				}
+				case 2:
+				{
+					switch (en) {
+					case 0:
+						memcpy(detC0_io + offset[en], det0Buf, detCol[en] << 2);
+						break;
+					case 1:
+						memcpy(detC1_io + offset[en], det1Buf, detCol[en] << 2);
+						break;
+					case 2:
+						memcpy(detC2_io + offset[en], det2Buf, detCol[en] << 2);
+						break;
+					default:
+						break;
+					}
+					break;
+				}
+
+					default:
+						break;
+				}
+				offset[en] += detCol[en];
+
+#ifdef DEBUG
+				for(int kc = 0; kc < detCol[en]; kc++)
+				{
+					switch (en) {
+					case 0:
+						fout_det02mem << detsBufPtr[en][kc] << " ";
+						break;
+					case 1:
+						fout_det12mem << detsBufPtr[en][kc] << " ";
+						break;
+					case 2:
+						fout_det22mem << detsBufPtr[en][kc] << " ";
+						break;
+					default:
+						break;
+					}
+				}
+
+				switch (en) {
+				case 0:
+					fout_det02mem << std::endl;
+					break;
+				case 1:
+					fout_det12mem << std::endl;
+					break;
+				case 2:
+					fout_det22mem << std::endl;
+					break;
+				default:
+					break;
+				}
+#endif
 			}
 		}
 #ifdef DEBUG
@@ -364,16 +477,18 @@ void SURF::calcLayerDetAndTrace(
 }
 
 void SURF::findCharacteristicPoint(
-		hls::stream<SurfHB>& det0,
-		hls::stream<SurfHB>& det1,
-		hls::stream<SurfHB>& det2,
+		SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+		SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+		SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
 		SurfHB hessianThreshold,
 		KeyPoint* keyPoints,
-		unsigned int* pointNumber)
+		unsigned int* pointNumber,
+		int indexr)
 {
 #ifdef DEBUG
-	static int detT[nTotalLayers] = {0};
+	int detT[nTotalLayers] = {0};
 #endif
+	int offset[3] = {0};
 	static const int detRow[nTotalLayers] = {591, 585, 579};
 	static const int detCol[nTotalLayers] = {791, 785, 779};
 	static int sizes[nTotalLayers] = {9, 15, 21};						// 每一层用的 Harr模板的大小
@@ -383,18 +498,18 @@ void SURF::findCharacteristicPoint(
 	KeyPoint point;
 	static SurfHB N1[3][3][791];
 
-	static int tmpPointNum = 0;
-	static ap_uint<2> bRow[3] = {0};
-	static int midIndex = 0;
+	int tmpPointNum = 0;
+	ap_uint<2> bRow[3] = {0};
+	int midIndex = 0;
 	/*中间层第一行或第一列元素在原图中的坐标偏移量*/
-	static int iSOffset = 0;
+	int iSOffset = 0;
 	findCharacteristicPoint_layer:for(int ly = 0; ly < nMiddleLayers; ly++)
 	{
 		/*必须在每层模板都初始化rIndex，否则切换到其它层时rIndex可能不是从0开始*/
 		int rIndex = -1;
 
 		ap_uint<6>RowIndex = 0;
-		static ap_uint<6> MSB = 0;
+		ap_uint<6> MSB = 0;
 
 #ifdef DEBUG
 		fout_NIndex << "====================================初始索引为====================================" << std::endl;
@@ -441,41 +556,67 @@ void SURF::findCharacteristicPoint(
 			bRow[1] = RowIndex.range(3,2);
 			bRow[2] = RowIndex.range(5,4);
 
-			findCharacteristicPoint_c0:for(int c = 0; c < detCol[midIndex - 1]; c++)
+			switch (indexr) {
+			case 0:
+				memcpy(&N1[0][rIndex][0], detA0_io + offset[0], detCol[0] << 2);
+				break;
+			case 1:
+				memcpy(&N1[0][rIndex][0], detB0_io + offset[0], detCol[0] << 2);
+				break;
+			case 2:
+				memcpy(&N1[0][rIndex][0], detC0_io + offset[0], detCol[0] << 2);
+				break;
+			default:
+				break;
+			}
+			offset[0] += detCol[0];
+
+			if(r >= margin && r < detRow[midIndex] + margin)
 			{
-
-				det0 >> N1[0][rIndex][c];
-#ifdef DEBUG
-				detT[0]++;
-#endif
-
-
-				if(r >= margin && r < detRow[midIndex] + margin && c >= margin && c < detCol[midIndex] + margin)
-				{
-
-					det1 >> N1[1][rIndex][c];
-#ifdef DEBUG
-					detT[1]++;
-#endif
+				switch (indexr) {
+				case 0:
+					memcpy(&N1[1][rIndex][margin], detA1_io + offset[1], detCol[1] << 2);
+					break;
+				case 1:
+					memcpy(&N1[1][rIndex][margin], detB1_io + offset[1], detCol[1] << 2);
+					break;
+				case 2:
+					memcpy(&N1[1][rIndex][margin], detC1_io + offset[1], detCol[1] << 2);
+					break;
+				default:
+					break;
 				}
+				offset[1] += detCol[1];
+			}
 
-				int maxMargin = (margin << 1);
-				if(r >= maxMargin && r < detRow[midIndex + 1] + maxMargin && c >= maxMargin && c < detCol[midIndex + 1] + maxMargin)
-				{
-
-					det2 >> N1[2][rIndex][c];
-#ifdef DEBUG
-					detT[2]++;
-#endif
-
+			int maxMargin = (margin << 1);
+			if(r >= maxMargin && r < detRow[midIndex + 1] + maxMargin)
+			{
+				switch (indexr) {
+				case 0:
+					memcpy(&N1[2][rIndex][maxMargin], detA2_io + offset[2], detCol[2] << 2);
+					break;
+				case 1:
+					memcpy(&N1[2][rIndex][maxMargin], detB2_io + offset[2], detCol[2] << 2);
+					break;
+				case 2:
+					memcpy(&N1[2][rIndex][maxMargin], detC2_io + offset[2], detCol[2] << 2);
+					break;
+				default:
+					break;
 				}
+				offset[2] += detCol[2];
+			}
 
-				int firstIndex = maxMargin + 2;
-				static SurfHB val0  = 0;
-				static int cOffset = -2;
+			int firstIndex = maxMargin + 2;
+			SurfHB val0  = 0;
+			static int cOffset = -2;
 
-				/*开始寻找特征点*/
-				if(r >= firstIndex && r < detRow[midIndex + 1] + maxMargin && c >= firstIndex && c < detCol[midIndex + 1] + maxMargin)
+
+			/*开始寻找特征点*/
+			if(r >= firstIndex && r < detRow[midIndex + 1] + maxMargin)
+			{
+				findCharacteristicPoint_c0:for(int c = firstIndex; c < detCol[midIndex + 1] + maxMargin; c++)
 				{
 					val0 = N1[1][bRow[1]][c - 1];
 
@@ -526,23 +667,36 @@ void SURF::findCharacteristicPoint(
 	tmpPointNum = 0;
 }
 
-void SURF::HessianDetector(hls::stream<int>& sum,  KeyPoint* keyPoints, unsigned int* pointNumber, int nOctaves, int nOctaveLayers, SurfHB hessianThreshold)
+void SURF::HessianDetector(
+		hls::stream<int>& sum,
+		SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
+		SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
+		SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+		KeyPoint* keyPoints,
+		unsigned int* pointNumber,
+		int nOctaves,
+		int nOctaveLayers,
+		SurfHB hessianThreshold)
 {
+	static int indexw = 0, indexr = 0;
 
-	hls::stream<SurfHB> dets[nTotalLayers];				// 每一层图像 对应的 Hessian行列式的值
+	indexr = indexw++;
+	indexw = (indexw > 2)? 0: indexw;
 
+	//不能一起综合
 	calcLayerDetAndTrace(
 			sum,
-			dets[0],
-			dets[1],
-			dets[2]);
+		    detA0_io, detA1_io, detA2_io,
+		    detB0_io, detB1_io, detB2_io,
+		    detC0_io, detC1_io, detC2_io,
+			indexw);
 
 	findCharacteristicPoint(
-			dets[0],
-			dets[1],
-			dets[2],
+		    detA0_io, detA1_io, detA2_io,
+		    detB0_io, detB1_io, detB2_io,
+		    detC0_io, detC1_io, detC2_io,
 			hessianThreshold,
 			keyPoints,
-			pointNumber);
-
+			pointNumber,
+			indexr);
 }

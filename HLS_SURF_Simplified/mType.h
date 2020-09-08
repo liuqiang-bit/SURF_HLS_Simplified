@@ -19,10 +19,10 @@ typedef hls::Scalar<3, unsigned char>                 PIXEL_C3;
 typedef hls::Mat<MAX_HEIGHT, MAX_WIDTH, HLS_8UC3>     IMAGE_C3;
 
 typedef ap_uint<32> KeyPoint;
+
 typedef ap_fixed<32,22,AP_RND > SurfHB;
+
+//极大的增加了综合实践时间，增加了资源占用
 //typedef float SurfHB;
-//typedef	struct{
-//	int y, x, octave;
-//}KeyPoint;
 
 #endif
