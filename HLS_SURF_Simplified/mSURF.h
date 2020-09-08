@@ -27,62 +27,67 @@
 #ifdef DEBUG
 #include <fstream>
 #endif
-namespace my{
+namespace my {
 
-class SURF
-{
-private:
+	class SURF
+	{
+	private:
 
-	static const int MaxSize = 1920;
+		static const int MaxSize = 1920;
 
-//	typedef struct{
-//		int x1, x2, y1, y2;
-//		float n;
-//	}SurfHB;
+		//	typedef struct{
+		//		int x1, x2, y1, y2;
+		//		float n;
+		//	}SurfHB;
 
-public:
+	public:
 
-	SURF();
+		SURF();
 
-	void createHessianBox_x_y(const int box[3][5], SurfHB dst[3][5], int oldSize, int newSize, int cols);
-	void createHessianBox_xy(const int box[4][5], SurfHB dst[4][5], int oldSize, int newSize, int cols);
+		void createHessianBox_x_y(const int box[3][5], SurfHB dst[3][5], int oldSize, int newSize, int cols);
+		void createHessianBox_xy(const int box[4][5], SurfHB dst[4][5], int oldSize, int newSize, int cols);
 
-	SurfHB calcHaarPattern_x_y(int sumBuf[sumBufRow][sumCol], const SurfHB box[3][5], ap_uint< sumBufRow << 3 > sumBufIndex, int rOffset, int cOffset);
-	SurfHB calcHaarPattern_xy(int sumBuf[sumBufRow][sumCol], const SurfHB box[4][5], ap_uint< sumBufRow << 3 > sumBufIndex, int rOffset, int cOffset);
+		SurfHB calcHaarPattern_x_y(int sumBuf[sumBufRow][sumCol], const SurfHB box[3][5], ap_uint< sumBufRow << 3 > sumBufIndex, int rOffset, int cOffset);
+		SurfHB calcHaarPattern_xy(int sumBuf[sumBufRow][sumCol], const SurfHB box[4][5], ap_uint< sumBufRow << 3 > sumBufIndex, int rOffset, int cOffset);
 
-	void integralImg(hls::Mat<600, 800, HLS_8UC3>& img, hls::stream<int>& dst);
+		void integralImg(hls::Mat<600, 800, HLS_8UC3>& img, hls::stream<int>& dst);
 
-	void calcLayerDetAndTrace(
+		void calcLayerDetAndTrace(
 			hls::stream<int>& sum,
-			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
-			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
-			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+
+			SurfHB* detA0_o, SurfHB* detA1_o, SurfHB* detA2_o,
+			SurfHB* detB0_o, SurfHB* detB1_o, SurfHB* detB2_o,
+			SurfHB* detC0_o, SurfHB* detC1_o, SurfHB* detC2_o,
 			int indexw);
 
+		void findCharacteristicPoint(
+			SurfHB* detA0_i, SurfHB* detA1_i, SurfHB* detA2_i,
+			SurfHB* detB0_i, SurfHB* detB1_i, SurfHB* detB2_i,
+			SurfHB* detC0_i, SurfHB* detC1_i, SurfHB* detC2_i,
 
-	void findCharacteristicPoint(
-			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
-			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
-			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
 			SurfHB hessianThreshold,
 			KeyPoint* keyPoints,
 			unsigned int* pointNumber,
 			int indexr);
 
-	void HessianDetector(
+		void HessianDetector(
 			hls::stream<int>& sum,
-			SurfHB* detA0_io, SurfHB* detA1_io, SurfHB* detA2_io,
-			SurfHB* detB0_io, SurfHB* detB1_io, SurfHB* detB2_io,
-			SurfHB* detC0_io, SurfHB* detC1_io, SurfHB* detC2_io,
+			SurfHB* detA0_i, SurfHB* detA1_i, SurfHB* detA2_i,
+			SurfHB* detB0_i, SurfHB* detB1_i, SurfHB* detB2_i,
+			SurfHB* detC0_i, SurfHB* detC1_i, SurfHB* detC2_i,
+
+			SurfHB* detA0_o, SurfHB* detA1_o, SurfHB* detA2_o,
+			SurfHB* detB0_o, SurfHB* detB1_o, SurfHB* detB2_o,
+			SurfHB* detC0_o, SurfHB* detC1_o, SurfHB* detC2_o,
 			KeyPoint* keyPoints,
 			unsigned int* pointNumber,
 			int nOctaves,
 			int nOctaveLayers,
 			SurfHB hessianThreshold);
-};
+	};
 
 
-/*---------------------------------------class SURF end----------------------------------------*/
+	/*---------------------------------------class SURF end----------------------------------------*/
 
 }
 #endif

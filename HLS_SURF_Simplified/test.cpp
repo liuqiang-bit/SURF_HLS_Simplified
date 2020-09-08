@@ -58,6 +58,10 @@ int main(int argc, char** argv)
 			detA0, detA1, detA2, 
 			detB0, detB1, detB2, 
 			detC0, detC1, detC2, 
+
+			detA0, detA1, detA2,
+			detB0, detB1, detB2,
+			detC0, detC1, detC2,
 			keyPoints, 
 			&kpn, 
 			10000);
